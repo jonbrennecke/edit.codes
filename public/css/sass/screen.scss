@@ -1,110 +1,26 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 
 @import "compass/reset";
+@import "compass/css3/images";
+@import url("http://fonts.googleapis.com/css?family=Open+Sans");
+@import "footer";
+@import "signup-home";
 
-// $solarized: #002b36;
+$solarized: #002b36;
 $monokai-bg: #272822;
 $monokai-red: #f9276b;
 $monokai-white: #f8f8f2;
 
-
-// header {
-// 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-// 	font-weight: 100;
-// 	font-size: 40px;
-// 	color: $monokai-red;
-// 	position: fixed;
-// 	width: 100%;
-// 	height: 50px;
-// 	background: $monokai-bg;
-// 	top: 0;
-// 	left: 0;
-// 	padding: 5px 15px;
-// 	box-sizing: border-box;
-// }
-
-@import "compass/css3/images";
-@import url("http://fonts.googleapis.com/css?family=Open+Sans");
-
-section.signup-home {
-	header {
-		font-family: "Open Sans", Helvetica, Arial, sans-serif;
-		font-size: 36pt;
-		display: block;
-		margin: 50px auto;
-		width: 300px;
-		font-weight: lighter;
-		color: #888;
-		text-align: center;
-	}
-}
-
-form.form-signup-home {
-	position: relative;
-	margin: 0 auto;
-	width: 300px;
-	font-family: Helvetica, Arial, sans-serif;
-
-	p {
-		margin: -10px 0 25px 0;
-		padding: 0 5px;
-		font-size: 10pt;
-		color: #888;
-	}
-
-	input {
-		width: 100%;
-		border-radius: 5px;
-		border: none;
-		outline: none;
-		-webkit-appearance: none;
-		padding: 0.75em;
-		font-size: 12pt;
-		box-sizing: border-box;
-  
-		&[type='text'], &[type='password'],  {
-			box-shadow: 0px 0px 3px rgba(#000,0.5), 0px 0px 15px rgba(#000,0.05) inset;
-			margin-bottom: 15px;
-		}
-
-		&[type='submit'] {
-			$green: #60b044;
-			background: $green;
-			@include background( linear-gradient( lighten($green,5%), darken($green,8%)) );
-			color: #fefefe;
-			text-shadow: 0px -1px 0px rgba(#000,0.25);
-			box-shadow: 0px 1px 1px lighten($green,30%) inset, 0px 0px 15px rgba(#000,0.05) inset, 0px 0px 5px rgba(#000,0.25);
-			border: 1px solid darken($green,0%);
-			cursor: pointer;
-			font-weight: lighter;
-		}
-	}
-}    
+$red: #da1764;
+$purple: #84258a;
 
 
-footer {
-	font-family: Helvetica, Arial, sans-serif;
-	padding: 0 5px;
-	font-size: 10pt;
-	color: #888;
-	height: 3em;
+html {
+	@include background( linear-gradient( -45deg, $purple, $red ) );
+	height: 100%;
 	width: 100%;
-	position: absolute;
-	text-align: center;
-	bottom: 1em;
-
-	p {
-		padding: 0.25em;
-	}
-
-	a {
-		color: #888;
-	}
-}
+	overflow: hidden;
+}   
       
     
 

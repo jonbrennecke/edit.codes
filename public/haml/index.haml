@@ -24,18 +24,26 @@
 
 		- # signup form
 		%section{ :class => 'signup-home' }
-			%header edit.codes
-			%form{ :class => 'form-signup-home' }
-				%input{ :type => 'text', :name => 'user[name]', :placeholder => 'Pick a username' }
-				%input{ :type => 'text', :name => 'user[email]', :placeholder => 'Your email' }
-				%input{ :type => 'password', :name => 'user[password]', :placeholder => 'Create a password' }
-				%p Use at least one lowercase letter, one numeral, and seven characters.
-				%input{ :type => 'submit', :value => 'Sign Up for Free' }
+			%div{ :class => 'container' }
+				%header #{title}
+				%form{ :class => 'form-signup-home' }
+					%input{ :type => 'text', :name => 'user[name]', :placeholder => 'Pick a username' }
+					%input{ :type => 'text', :name => 'user[email]', :placeholder => 'Your email' }
+					%input{ :type => 'password', :name => 'user[password]', :placeholder => 'Create a password' }
+					%p Use at least one lowercase letter, one numeral, and seven characters.
+					%input{ :type => 'submit', :value => 'Sign Up for Free' }
 
 		%footer
+			%div{ :class => "links" }
+			
+				-# Codio's ILOS button
+				%a{ :href => "http://www.iloveopensource.io/projects/537107f587659fce66002807" }
+					%img{ :class => 'ilos', :src => "https://github.com/codio/iloveopensource/blob/master/public/images/logo-lightbg.png?raw=true" }
 			%cite
 				%p 
-					This website is completely open source and is distributed under an MIT License.  
+					This website is completely open source and is distributed under the MIT License.  
 					%a{ :href => "https://github.com/jonbrennecke/edit.codes" } Fork this page on Github
 				%p Copyright © 2014 Jon Brennecke unless otherwise specified.  All rights reserved.
+				
+
 				

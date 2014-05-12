@@ -1,0 +1,75 @@
+section.signup-home {
+
+	.container {
+		position: relative;
+		margin: 50px auto;
+		background: rgba(#fefefe,0.2);
+		width: 325px;
+		padding: 25px;
+		box-shadow: 0px 0px 150px rgba(#000,0.25), 0px 0px 2px rgba(#fff,0.25) inset;
+	}
+
+	header {
+		font-family: "Open Sans", Helvetica, Arial, sans-serif;
+		font-size: 36pt;
+		display: block;
+		margin: 35px auto;
+		width: 100%;
+		font-weight: lighter;
+		color: rgba(#000,0.5);
+		text-align: center;
+		text-shadow: 0px 0px 5px rgba(#fff,0.3);
+	}
+}
+
+
+form.form-signup-home {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	color: rgba(#000,0.5);
+
+	p {
+		margin: -10px 0 25px 0;
+		padding: 0 5px;
+		font-size: 10pt;
+	}
+
+	input {
+		width: 100%;
+		border-radius: 5px;
+		border: none;
+		outline: none;
+		-webkit-appearance: none;
+		padding: 0.75em;
+		font-size: 12pt;
+		box-sizing: border-box;
+		background: rgba(#000,0.2);
+		color: rgba(#000,0.5);
+  
+		&[type='text'], &[type='password'],  {
+			box-shadow: 0px 0px 2px rgba(#fff,0.5);
+			margin-bottom: 15px;
+
+			// most browsers force the placeholder to be some light gray color
+			&::-webkit-input-placeholder { color: inherit; }
+			&:-moz-placeholder { color: inherit; }
+			&::-moz-placeholder { color: inherit; }
+			&::-ms-input-placeholder { color: inherit; }
+		}
+
+		// submit button
+		&[type='submit'] {
+			$green: #60b044;
+			background: $green;
+			@include background( linear-gradient( lighten($green,5%), darken($green,8%)) );
+			color: #fefefe;
+			text-shadow: 0px -1px 0px rgba(#000,0.25);
+			box-shadow: 0px 1px 1px lighten($green,30%) inset, 0px 0px 15px rgba(#000,0.05) inset; //0px 0px 5px rgba(#000,0.25);
+			border: 1px solid darken($green,20%);
+			cursor: pointer;
+			font-weight: lighter;
+		}
+	}
+} 

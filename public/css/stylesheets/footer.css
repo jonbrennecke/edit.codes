@@ -1,0 +1,26 @@
+/* line 1, ../sass/footer.scss */
+footer {
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0 5px;
+  font-size: 10pt;
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  bottom: 1em;
+}
+/* line 11, ../sass/footer.scss */
+footer p {
+  padding: 0.25em;
+}
+/* line 13, ../sass/footer.scss */
+footer a {
+  color: inherit;
+}
+/* line 16, ../sass/footer.scss */
+footer a img.ilos {
+  height: 3em;
+  -webkit-filter: grayscale(1) contrast(0) brightness(0);
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
