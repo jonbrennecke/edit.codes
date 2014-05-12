@@ -1,0 +1,30 @@
+- title = "octave.io"
+
+!!! 5
+%html
+	%head
+
+		- # compass stuffs
+		%link{ :rel => "stylesheet", :media => "screen, projection", :type => "text/css", :href => "../css/stylesheets/screen.css" }
+		/[if IE]
+			%link{ :rel => "stylesheet", :media => "screen, projection", :type => "text/css", :href => "../css/stylesheets/ie.css" }
+		%link{ :rel => "stylesheet", :media => "print", :type => "text/css", :href => "../css/stylesheets/print.css" }
+
+
+		%script{ :type => 'text/javascript', :src => '../jquery.min.js' }
+		%script{ :type => 'text/javascript', :src => '../index.js' }
+
+		%title #{title}
+	%body
+		%section{ :id => 'login' }
+			%form{ :id => 'user' }
+				%dl{ :class => 'form' }
+					%dd
+						%input{ :type => 'text', :name => 'user[login]', :placeholder => 'Pick a username' }
+				%dl{ :class => 'form' }
+					%dd
+						%input{ :type => 'text', :name => 'user[email]', :placeholder => 'Your email' }
+				%dl{ :class => 'form' }
+					%dd
+						%input{ :type => 'password', :name => 'user[password]', :placeholder => 'Create a password' }
+				

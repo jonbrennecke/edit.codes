@@ -1,0 +1,41 @@
+- # 
+- #
+- # Login page which (for now) is serving as a home page
+- #
+- #
+
+- title = "edit.codes"
+
+!!! 5
+%html
+	%head
+
+		- # compass stylesheet stuffs
+		%link{ :rel => "stylesheet", :media => "screen, projection", :type => "text/css", :href => "../css/stylesheets/screen.css" }
+		/[if IE]
+			%link{ :rel => "stylesheet", :media => "screen, projection", :type => "text/css", :href => "../css/stylesheets/ie.css" }
+		%link{ :rel => "stylesheet", :media => "print", :type => "text/css", :href => "../css/stylesheets/print.css" }
+
+
+		/ %script{ :type => 'text/javascript', :src => '../jquery.min.js' }
+
+		%title #{title}
+	%body
+
+		- # signup form
+		%section{ :class => 'signup-home' }
+			%header edit.codes
+			%form{ :class => 'form-signup-home' }
+				%input{ :type => 'text', :name => 'user[name]', :placeholder => 'Pick a username' }
+				%input{ :type => 'text', :name => 'user[email]', :placeholder => 'Your email' }
+				%input{ :type => 'password', :name => 'user[password]', :placeholder => 'Create a password' }
+				%p Use at least one lowercase letter, one numeral, and seven characters.
+				%input{ :type => 'submit', :value => 'Sign Up for Free' }
+
+		%footer
+			%cite
+				%p 
+					This website is completely open source and is distributed under an MIT License.  
+					%a{ :href => "https://github.com/jonbrennecke/edit.codes" } Fork this page on Github
+				%p Copyright © 2014 Jon Brennecke unless otherwise specified.  All rights reserved.
+				

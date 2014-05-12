@@ -1,0 +1,1 @@
+%%%%%%%%%%%%%%% welcome to CloudLab\n\nfunction text = helloWorld()\n\n\ttext = 'hello world!';\n\nend\n

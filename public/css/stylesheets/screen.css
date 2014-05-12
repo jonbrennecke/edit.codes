@@ -1,0 +1,153 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import url("http://fonts.googleapis.com/css?family=Open+Sans");
+/* line 17, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 34, ../sass/screen.scss */
+section.signup-home header {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 36pt;
+  display: block;
+  margin: 50px auto;
+  width: 300px;
+  font-weight: lighter;
+  color: #888;
+  text-align: center;
+}
+
+/* line 46, ../sass/screen.scss */
+form.form-signup-home {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+/* line 52, ../sass/screen.scss */
+form.form-signup-home p {
+  margin: -10px 0 25px 0;
+  padding: 0 5px;
+  font-size: 10pt;
+  color: #888;
+}
+/* line 59, ../sass/screen.scss */
+form.form-signup-home input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  padding: 0.75em;
+  font-size: 12pt;
+  box-sizing: border-box;
+}
+/* line 69, ../sass/screen.scss */
+form.form-signup-home input[type='text'], form.form-signup-home input[type='password'] {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 0px 0px 15px rgba(0, 0, 0, 0.05) inset;
+  margin-bottom: 15px;
+}
+/* line 74, ../sass/screen.scss */
+form.form-signup-home input[type='submit'] {
+  background: #60b044;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6dbc52), color-stop(100%, #509339));
+  background: -webkit-linear-gradient(#6dbc52, #509339);
+  background: -moz-linear-gradient(#6dbc52, #509339);
+  background: -o-linear-gradient(#6dbc52, #509339);
+  background: linear-gradient(#6dbc52, #509339);
+  color: #fefefe;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 1px #bae0ad inset, 0px 0px 15px rgba(0, 0, 0, 0.05) inset, 0px 0px 5px rgba(0, 0, 0, 0.25);
+  border: 1px solid #60b044;
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+/* line 89, ../sass/screen.scss */
+footer {
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0 5px;
+  font-size: 10pt;
+  color: #888;
+  height: 3em;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  bottom: 1em;
+}
+/* line 100, ../sass/screen.scss */
+footer p {
+  padding: 0.25em;
+}
+/* line 104, ../sass/screen.scss */
+footer a {
+  color: #888;
+}
+
+/* line 145, ../sass/screen.scss */
+#code-edit .CodeMirror {
+  box-shadow: none;
+}
