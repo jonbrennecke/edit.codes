@@ -109,7 +109,7 @@ passport.deserializeUser(function(id, done) {
 app.get('/', function ( req, res ){
 
 	// compile the HAML and return the HTML
-	exec("haml public/haml/dash.haml", function ( error, html ) {
+	exec("haml public/haml/signup.haml", function ( error, html ) {
 		if ( error ) {
 			throw error;
 		}
