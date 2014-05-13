@@ -1,0 +1,33 @@
+/* line 1, ../sass/navigation.scss */
+nav {
+  position: static;
+  padding: 25px;
+  width: 100%;
+  font-size: 25pt;
+}
+/* line 11, ../sass/navigation.scss */
+nav header h1 {
+  position: absolute;
+  left: 0;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 25pt;
+  display: block;
+  margin: 0 25px;
+  width: 100%;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+/* line 24, ../sass/navigation.scss */
+nav header .header-actions {
+  position: absolute;
+  right: 0;
+  width: 5em;
+}
+/* line 30, ../sass/navigation.scss */
+nav header .header-actions a.big-green-button {
+  font-size: 12pt;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.75em 1em;
+}

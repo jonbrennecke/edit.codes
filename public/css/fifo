@@ -1,2 +1,0 @@
-svd(rand(3))
-fprintf(stderr,"ERR")

@@ -1,97 +1,74 @@
-/*
-Syntax error: Undefined mixin 'background'.
-        on line 66 of /Users/jon/Desktop/nodestats/public/css/sass/signup-home.scss, in `background'
-        from line 66 of /Users/jon/Desktop/nodestats/public/css/sass/signup-home.scss
+/* line 3, ../sass/signup-home.scss */
+section.signup-home .container {
+  position: relative;
+  margin: 50px auto;
+  background: rgba(254, 254, 254, 0.2);
+  width: 325px;
+  padding: 15px 25px 25px 25px;
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.25), 0px 0px 2px rgba(255, 255, 255, 0.25) inset;
+}
+/* line 12, ../sass/signup-home.scss */
+section.signup-home header {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 36pt;
+  display: block;
+  margin: 15px auto 40px auto;
+  width: 100%;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
 
-Backtrace:
-/Users/jon/Desktop/nodestats/public/css/sass/signup-home.scss:66:in `background'
-/Users/jon/Desktop/nodestats/public/css/sass/signup-home.scss:66
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:139:in `block (2 levels) in compile'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:138:in `block in compile'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/logger.rb:45:in `red'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:137:in `compile'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:118:in `compile_if_required'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:101:in `each'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:101:in `block in run'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/compiler.rb:100:in `run'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-/Library/Ruby/Gems/2.0.0/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/commands/watch_project.rb:87:in `perform'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/commands/base.rb:18:in `execute'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/commands/project_base.rb:19:in `execute'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/bin/compass:30:in `block in <top (required)>'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/bin/compass:44:in `call'
-/Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/bin/compass:44:in `<top (required)>'
-/usr/bin/compass:23:in `load'
-/usr/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'background'.\A         on line 66 of /Users/jon/Desktop/nodestats/public/css/sass/signup-home.scss, in `background'\A         from line 66 of /Users/jon/Desktop/nodestats/public/css/sass/signup-home.scss"; }
+/* line 26, ../sass/signup-home.scss */
+form.form-signup-home {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+/* line 33, ../sass/signup-home.scss */
+form.form-signup-home p {
+  margin: -10px 0 0 0;
+  padding: 0 5px;
+  font-size: 10pt;
+}
+/* line 39, ../sass/signup-home.scss */
+form.form-signup-home input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  padding: 0.75em;
+  font-size: 12pt;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.5);
+}
+/* line 51, ../sass/signup-home.scss */
+form.form-signup-home input[type='text'], form.form-signup-home input[type='password'] {
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+  margin-bottom: 15px;
+}
+/* line 56, ../sass/signup-home.scss */
+form.form-signup-home input[type='text']::-webkit-input-placeholder, form.form-signup-home input[type='password']::-webkit-input-placeholder {
+  color: inherit;
+}
+/* line 57, ../sass/signup-home.scss */
+form.form-signup-home input[type='text']:-moz-placeholder, form.form-signup-home input[type='password']:-moz-placeholder {
+  color: inherit;
+}
+/* line 58, ../sass/signup-home.scss */
+form.form-signup-home input[type='text']::-moz-placeholder, form.form-signup-home input[type='password']::-moz-placeholder {
+  color: inherit;
+}
+/* line 59, ../sass/signup-home.scss */
+form.form-signup-home input[type='text']::-ms-input-placeholder, form.form-signup-home input[type='password']::-ms-input-placeholder {
+  color: inherit;
+}
+/* line 63, ../sass/signup-home.scss */
+form.form-signup-home input[type='submit'] {
+  margin-top: 25px;
+}

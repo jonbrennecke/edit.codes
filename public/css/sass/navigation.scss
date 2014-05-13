@@ -1,0 +1,38 @@
+nav {
+	position: static;
+	padding: 25px;
+	width: 100%;
+	font-size: 25pt;
+
+
+
+	header {
+
+		h1 {
+			position: absolute;
+			left: 0;
+			font-family: "Open Sans", Helvetica, Arial, sans-serif;
+			font-size: 25pt;
+			display: block;
+			margin: 0 25px;
+			width: 100%;
+			font-weight: lighter;
+			color: rgba(#000,0.5);
+			text-shadow: 0px 0px 5px rgba(#fff,0.3);
+		}
+
+		.header-actions {
+
+			position: absolute;
+			right: 0;
+			width: 5em;
+
+			a.big-green-button {
+				font-size: 12pt;
+				border-radius: 5px;
+				text-decoration: none;
+				padding: 0.75em 1em;
+			}
+		}
+	}
+}

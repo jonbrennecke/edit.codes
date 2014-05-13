@@ -5,7 +5,7 @@ section.signup-home {
 		margin: 50px auto;
 		background: rgba(#fefefe,0.2);
 		width: 325px;
-		padding: 25px;
+		padding: 15px 25px 25px 25px;
 		box-shadow: 0px 0px 150px rgba(#000,0.25), 0px 0px 2px rgba(#fff,0.25) inset;
 	}
 
@@ -13,7 +13,7 @@ section.signup-home {
 		font-family: "Open Sans", Helvetica, Arial, sans-serif;
 		font-size: 36pt;
 		display: block;
-		margin: 35px auto;
+		margin: 15px auto 40px auto;
 		width: 100%;
 		font-weight: lighter;
 		color: rgba(#000,0.5);
@@ -31,7 +31,7 @@ form.form-signup-home {
 	color: rgba(#000,0.5);
 
 	p {
-		margin: -10px 0 25px 0;
+		margin: -10px 0 0 0;
 		padding: 0 5px;
 		font-size: 10pt;
 	}
@@ -60,16 +60,9 @@ form.form-signup-home {
 		}
 
 		// submit button
-		&[type='submit'] {
-			$green: #60b044;
-			background: $green;
-			@include background( linear-gradient( lighten($green,5%), darken($green,8%)) );
-			color: #fefefe;
-			text-shadow: 0px -1px 0px rgba(#000,0.25);
-			box-shadow: 0px 1px 1px lighten($green,30%) inset, 0px 0px 15px rgba(#000,0.05) inset; //0px 0px 5px rgba(#000,0.25);
-			border: 1px solid darken($green,20%);
-			cursor: pointer;
-			font-weight: lighter;
+		&[type='submit'] { 
+			@extend .big-green-button; 
+			margin-top: 25px;
 		}
 	}
 } 

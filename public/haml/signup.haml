@@ -17,22 +17,32 @@
 		%link{ :rel => "stylesheet", :media => "print", :type => "text/css", :href => "../css/stylesheets/print.css" }
 
 
-		/ %script{ :type => 'text/javascript', :src => '../jquery.min.js' }
+		/%script{ :type => 'text/javascript', :src => '../jquery.min.js' }
 
 		%title #{title}
 	%body
 
+		- # navigation bar
+		%nav
+			%header
+				%h1 #{title}
+				%div{ :class => 'header-actions'}
+					%ul
+						%li 
+							%a{ :href => '', :class => 'big-green-button' } Sign in
+
 		- # signup form
 		%section{ :class => 'signup-home' }
 			%div{ :class => 'container' }
-				%header #{title}
-				%form{ :class => 'form-signup-home' }
-					%input{ :type => 'text', :name => 'user[name]', :placeholder => 'Pick a username' }
-					%input{ :type => 'text', :name => 'user[email]', :placeholder => 'Your email' }
-					%input{ :type => 'password', :name => 'user[password]', :placeholder => 'Create a password' }
+				%header welcome
+				%form{ :class => 'form-signup-home', :method => 'post', :action => '/register' }
+					%input{ :type => 'text', :name => 'username', :placeholder => 'Pick a username' }
+					%input{ :type => 'text', :name => 'email', :placeholder => 'Your email' }
+					%input{ :type => 'password', :name => 'password', :placeholder => 'Create a password' }
 					%p Use at least one lowercase letter, one numeral, and seven characters.
-					%input{ :type => 'submit', :value => 'Sign Up for Free' }
+					%input{ :type => 'submit', :value => 'Sign Up for Free', :class => 'big-green-button' }
 
+		- # footer area
 		%footer
 			%div{ :class => "links" }
 			
@@ -44,6 +54,4 @@
 					This website is completely open source and is distributed under the MIT License.  
 					%a{ :href => "https://github.com/jonbrennecke/edit.codes" } Fork this page on Github
 				%p Copyright © 2014 Jon Brennecke unless otherwise specified.  All rights reserved.
-				
-
-				
+								

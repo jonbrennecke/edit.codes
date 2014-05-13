@@ -3,16 +3,12 @@
 @import "compass/reset";
 @import "compass/css3/images";
 @import url("http://fonts.googleapis.com/css?family=Open+Sans");
+
+@import "colors";
+@import "ui";
+@import "navigation";
 @import "footer";
 @import "signup-home";
-
-$solarized: #002b36;
-$monokai-bg: #272822;
-$monokai-red: #f9276b;
-$monokai-white: #f8f8f2;
-
-$red: #da1764;
-$purple: #84258a;
 
 
 html {

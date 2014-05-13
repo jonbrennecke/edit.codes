@@ -64,6 +64,65 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+/* line 1, ../sass/ui.scss */
+.big-green-button, form.form-signup-home input[type='submit'] {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #60b044;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6dbc52), color-stop(100%, #509339));
+  background: -webkit-linear-gradient(#6dbc52, #509339);
+  background: -moz-linear-gradient(#6dbc52, #509339);
+  background: -o-linear-gradient(#6dbc52, #509339);
+  background: linear-gradient(#6dbc52, #509339);
+  color: #fefefe;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 1px #bae0ad inset, 0px 0px 15px rgba(0, 0, 0, 0.05) inset;
+  border: 1px solid #386628;
+  cursor: pointer;
+  font-weight: lighter;
+}
+/* line 12, ../sass/ui.scss */
+.big-green-button:active, form.form-signup-home input[type='submit']:active {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #569e3d), color-stop(100%, #6dbc52));
+  background: -webkit-linear-gradient(#569e3d, #6dbc52);
+  background: -moz-linear-gradient(#569e3d, #6dbc52);
+  background: -o-linear-gradient(#569e3d, #6dbc52);
+  background: linear-gradient(#569e3d, #6dbc52);
+}
+
+/* line 1, ../sass/navigation.scss */
+nav {
+  position: static;
+  padding: 25px;
+  width: 100%;
+  font-size: 25pt;
+}
+/* line 11, ../sass/navigation.scss */
+nav header h1 {
+  position: absolute;
+  left: 0;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 25pt;
+  display: block;
+  margin: 0 25px;
+  width: 100%;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+}
+/* line 24, ../sass/navigation.scss */
+nav header .header-actions {
+  position: absolute;
+  right: 0;
+  width: 5em;
+}
+/* line 30, ../sass/navigation.scss */
+nav header .header-actions a.big-green-button {
+  font-size: 12pt;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.75em 1em;
+}
+
 /* line 1, ../sass/footer.scss */
 footer {
   font-family: Helvetica, Arial, sans-serif;
@@ -97,7 +156,7 @@ section.signup-home .container {
   margin: 50px auto;
   background: rgba(254, 254, 254, 0.2);
   width: 325px;
-  padding: 25px;
+  padding: 15px 25px 25px 25px;
   box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.25), 0px 0px 2px rgba(255, 255, 255, 0.25) inset;
 }
 /* line 12, ../sass/signup-home.scss */
@@ -105,7 +164,7 @@ section.signup-home header {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 36pt;
   display: block;
-  margin: 35px auto;
+  margin: 15px auto 40px auto;
   width: 100%;
   font-weight: lighter;
   color: rgba(0, 0, 0, 0.5);
@@ -123,7 +182,7 @@ form.form-signup-home {
 }
 /* line 33, ../sass/signup-home.scss */
 form.form-signup-home p {
-  margin: -10px 0 25px 0;
+  margin: -10px 0 0 0;
   padding: 0 5px;
   font-size: 10pt;
 }
@@ -163,21 +222,10 @@ form.form-signup-home input[type='text']::-ms-input-placeholder, form.form-signu
 }
 /* line 63, ../sass/signup-home.scss */
 form.form-signup-home input[type='submit'] {
-  background: #60b044;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6dbc52), color-stop(100%, #509339));
-  background: -webkit-linear-gradient(#6dbc52, #509339);
-  background: -moz-linear-gradient(#6dbc52, #509339);
-  background: -o-linear-gradient(#6dbc52, #509339);
-  background: linear-gradient(#6dbc52, #509339);
-  color: #fefefe;
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 1px 1px #bae0ad inset, 0px 0px 15px rgba(0, 0, 0, 0.05) inset;
-  border: 1px solid #386628;
-  cursor: pointer;
-  font-weight: lighter;
+  margin-top: 25px;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 14, ../sass/screen.scss */
 html {
   background: -webkit-linear-gradient(-45deg, #84258a, #da1764);
   background: -moz-linear-gradient(-45deg, #84258a, #da1764);
@@ -188,7 +236,7 @@ html {
   overflow: hidden;
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 #code-edit .CodeMirror {
   box-shadow: none;
 }
