@@ -9,18 +9,13 @@
 !!! 5
 %html
 	%head
-
-		- # compass stylesheet stuffs
-		%link{ :rel => "stylesheet", :media => "screen, projection", :type => "text/css", :href => "../css/stylesheets/screen.css" }
-		/[if IE]
-			%link{ :rel => "stylesheet", :media => "screen, projection", :type => "text/css", :href => "../css/stylesheets/ie.css" }
-		%link{ :rel => "stylesheet", :media => "print", :type => "text/css", :href => "../css/stylesheets/print.css" }
-
-
+		%link{ :rel => "stylesheet", :media => "screen, projection", :type => "text/css", :href => "../css/stylesheets/dash.css"}
 		/%script{ :type => 'text/javascript', :src => '../jquery.min.js' }
 
 		%title #{title}
 	%body
+
+		%div.blue-panel
 
 		- # navigation bar
 		%nav
@@ -32,24 +27,33 @@
 							%a{ :href => '', :class => 'big-green-button' } Sign in
 
 		- # signup form
-		%section{ :class => 'signup-home' }
-			%div{ :class => 'container' }
-				%header welcome
-				%form{ :class => 'form-signup-home', :method => 'post', :action => '/login' }
-					%input{ :type => 'text', :name => 'username', :placeholder => 'Your username' }
-					%input{ :type => 'password', :name => 'password', :placeholder => 'Your password' }
-					%input{ :type => 'submit', :value => 'Sign in', :class => 'big-green-button' }
+		%section.dash-home.layout-box
+			%div.user-profile 
+				%h1 hi {{username}} 
+				%h2 this is your dashboard 
 
+
+			/ %div.docs-list
+			/ 	%header.docs-header-row
+			/ 	%ul.the-docs
+			/ 		%li
+			/ 		%li
+			/ 		%li
+			/ 		%li
+			/ 		%li
+				
 		- # footer area
-		%footer
-			%div{ :class => "links" }
+		%footer.dash-footer
+			%div.links
 			
 				-# Codio's ILOS button
 				%a{ :href => "http://www.iloveopensource.io/projects/537107f587659fce66002807" }
 					%img{ :class => 'ilos', :src => "https://github.com/codio/iloveopensource/blob/master/public/images/logo-lightbg.png?raw=true" }
 			%cite
+				%p Edit.Codes 0.0.1 &bull; Created by Jon Brennecke 
 				%p 
-					This website is completely open source and is distributed under the MIT License.  
-					%a{ :href => "https://github.com/jonbrennecke/edit.codes" } Fork this page on Github
-				%p Copyright © 2014 Jon Brennecke unless otherwise specified.  All rights reserved.
+					Code distributed under the 
+					<a target="_blank" href="http://opensource.org/licenses/mit-license.html">MIT License</a> &bull; 
+					<a target="_blank" href="https://github.com/jonbrennecke/edit.codes">Fork the repository on Github</a>
+				%p Copyright © 2014 Jon Brennecke.
 								

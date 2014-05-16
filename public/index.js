@@ -7,17 +7,17 @@ $(document).ready( function () {
 	// TODO pull this from a config json file
 	// TODO dynamically get mode using require.js
 	var codemirror = CodeMirror( document.getElementById('code-edit'), {
-		value : "",
-		mode : "octave",
-		lineNumbers : true,
-		theme : "monokai",
+		value: "if ( true ) {\n\tconsole.log('hello world!');\n}",
 		indentUnit : 4,
 		indentWithTabs : true,
-		keymap : "sublime",
-		autofocus : true,
-		matchBrackets : true,
-		autoCloseBrackets : true,
-		highlightSelectionMatches : true
+	    lineNumbers: true,
+	    mode: "javascript",
+	    keyMap: "sublime",
+	    autoCloseBrackets: true,
+	    autofocus : true,
+	    matchBrackets: true,
+	    showCursorWhenSelecting: true,
+	    theme: "monokai"
 	});
 
 

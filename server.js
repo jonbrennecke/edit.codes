@@ -20,6 +20,9 @@
  * $ node server.js user pass
  * 
  *
+ * TODO 
+ * 	- add chat app (websockets?)
+ *	- collaborative coding
  *
  */
 
@@ -62,6 +65,9 @@ var PORT = 3000,
 	// passport for authentication
 	passport = require('passport'),
 	LocalStrategy = require('passport-local').Strategy,
+
+	// crypto for md5 hashing
+	crypto = require('crypto'),
 	
 	// API Schemas
 	Script = require( __dirname + '/api/models/scripts'),
@@ -79,8 +85,14 @@ var PORT = 3000,
 
 
 // configure express
+app.set('views', __dirname + '/public/jade/' );
+app.set('view engine', 'jade');
+app.engine( 'jade', require('jade').__express );
 app.use( bodyParser() );
+
+// TODO replace serving static files with NginX
 app.use( express.static( __dirname + '/public/') );
+
 app.use( passport.initialize() );
 app.use( passport.session() );
 app.use( '/api', router );
@@ -92,11 +104,11 @@ app.use( '/api', router );
  *
  */
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser( function(user, done) {
 	done(null, user.id);
 });
 
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser( function(id, done) {
 	User.findById(id, function (err, user) {
 		done(err, user);
 	});
@@ -108,14 +120,22 @@ passport.deserializeUser(function(id, done) {
 // we'll be changing this later (TODO)
 app.get('/', function ( req, res ){
 
-	// compile the HAML and return the HTML
-	exec("haml public/haml/signup.haml", function ( error, html ) {
-		if ( error ) {
-			throw error;
-		}
+	// generate a link to the user's gravatar
+	var gravatar = "http://www.gravatar.com/avatar/";
+	gravatar += crypto.createHash('md5').update( "jpbrennecke@gmail.com".toLowerCase().trim() ).digest("hex");
+	gravatar += "?s=256";
 
-		res.send( html );
-	});
+	var data = {
+		user : {
+			name : "Jon",
+			email : "jpbrennecke@gmai.com",
+			gravatar : gravatar
+		}
+	}
+
+	res.render("dash", data );
+
+
 
 });
 
@@ -142,19 +162,20 @@ passport.use( new LocalStrategy(
 	}
 ));
 
+// gets the IDE page
+app.get('/ide', function ( req, res ){
+
+	// render the jade and return the html
+	res.render( 'ide' );
+
+});
 
 
 // gets the login page
 app.get('/login', function ( req, res ){
 
-	// compile the HAML and return the HTML
-	exec("haml public/haml/login.haml", function ( error, html ) {
-		if ( error ) {
-			throw error;
-		}
-
-		res.send( html );
-	});
+	// render the jade and return the html
+	res.render( 'login' );
 
 });
 
@@ -166,8 +187,6 @@ app.post( '/login',
 	passport.authenticate('local'),
 
 	function(req, res) { {
-
-		console.log('here')
 
 		// If this function gets called, authentication was successful.
 		// `req.user` contains the authenticated user.
@@ -207,6 +226,27 @@ app.post('/register', function ( req, res ) {
 	});
 
 });
+
+
+// 404 page
+// app.use(function(req, res, next){
+//   res.status(404);
+
+//   // respond with html page
+//   if (req.accepts('html')) {
+//     res.render('404', { url: req.url });
+//     return;
+//   }
+
+//   // respond with json
+//   if (req.accepts('json')) {
+//     res.send({ error: 'Not found' });
+//     return;
+//   }
+
+//   // default to plain-text. send()
+//   res.type('txt').send('Not found');
+// });
 
 
 
