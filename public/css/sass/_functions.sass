@@ -1,0 +1,69 @@
+/**
+ * box-sizing with browser prefixes
+ *
+ */
+@mixin box-sizing( $sizing )
+	-webkit-box-sizing: $sizing
+	-moz-box-sizing: $sizing
+	box-sizing: $sizing
+
+
+/**
+ * CSS Only tabs using background colored circles to oclude the foreground
+ *
+ */
+@mixin tab( $tab-height, $foreground, $background, $flip: false )
+
+	// make sure $tab-height is an even number
+	// if it's not, we'll be one pixel off when we divide the height by 2
+	$tab-height: if( $tab-height % 2 == 0, $tab-height, $tab-height + 1 )
+
+	height: $tab-height
+	text-align: center
+	box-sizing: border-box
+
+	@if $flip
+		border-bottom-right-radius: $tab-height / 1.5
+		border-bottom-left-radius: $tab-height / 1.5
+	@else
+		border-top-right-radius: $tab-height / 1.5
+		border-top-left-radius: $tab-height / 1.5
+
+
+	div.corner
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+
+		&::after
+			content: ''
+			position: absolute
+			background: $background
+			height: $tab-height
+			width: $tab-height
+			border-radius: 50%
+
+		&::before
+			content: ''
+			position: absolute
+			height: $tab-height / 2
+			width: $tab-height / 2
+			background: $foreground
+
+		&.before 
+			&::before 
+				left: 100%
+				bottom: if( $flip, $tab-height / 2, 0 )
+			
+			&::after 
+				left: 100%
+
+		&.after
+			&::before
+				right: 100%
+				bottom: if( $flip, $tab-height / 2, 0 )
+
+			&::after 
+				right: 100%

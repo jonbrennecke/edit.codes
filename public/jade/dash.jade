@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+	head
+		link( rel="stylesheet" media="screen, projection" type="text/css" href="../css/stylesheets/dash.css" )
+
+		title edit.codes
+		
+	body.dash-page
+
+		//- navigation bar
+		nav.blue-panel.dash-page
+			header.dark-header-bar
+				h1 edit.codes
+				div.header-actions
+					ul
+						li
+							a.big-green-button Sign in
+						//- li menu
+						//- li search
+
+		section.dash-home.layout-box
+			div.user-welcome
+				div.profile-img-wrap
+					img.profile-img.gravatar( src="#{user.gravatar}")
+				h1 hi <em>#{user.name}</em>
+				h2 this is your dashboard
+
+				div.dash-contents
+
+
+		footer.dash-footer
+			div.links
+				//- Codio's ILOS button
+				a( href="http://www.iloveopensource.io/projects/537107f587659fce66002807" )
+					img( class='ilos' src="https://github.com/codio/iloveopensource/blob/master/public/images/logo-lightbg.png?raw=true" )
+			cite
+				p Edit.Codes 0.0.1 &bull; Created by Jon Brennecke 
+				p 
+					Code distributed under the 
+					<a target="_blank" href="http://opensource.org/licenses/mit-license.html">MIT License</a> &bull; 
+					<a target="_blank" href="https://github.com/jonbrennecke/edit.codes">Fork the repository on Github</a>
+				p Copyright © 2014 Jon Brennecke.

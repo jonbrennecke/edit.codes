@@ -1,0 +1,65 @@
+.credits
+	position: relative
+	top: -95px
+	height: 100px
+	background: darken($monokai-white, 10%)
+	@extend .ubuntu
+	font-size: 10.5pt
+	color: rgba(#000,0.5)
+	width: 100%
+	text-align: center
+	margin-bottom: -100px
+	z-index: 5
+
+	a
+		text-decoration: none
+
+	p
+		padding: 0.25em
+
+	.half
+		box-sizing: border-box
+		position: relative
+		float: left
+		width: 50%
+		height: 100%
+
+	.cite
+		text-align: right
+		padding-right: 50px
+		padding-top: 15px
+
+		a
+			color: rgba(#000,0.7)
+			border-bottom: 1px dotted rgba(#000,0.7)
+
+	.links
+		.icon
+			position: relative
+			margin: 25px 0px 25px 50px
+			float: left
+			font-size: 50px
+			color: #000
+			height: 1em
+			display: block
+			-webkit-filter: grayscale(1) contrast(0) brightness(0)
+			opacity: 0.5
+			pointer: cursor
+
+			&.ilos
+				width: 3em
+
+
+#title-tab
+	position: absolute
+	cursor: pointer
+	right: 20%
+	@extend .ubuntu
+	background: darken($monokai-white, 10%)
+	bottom: -50px
+	z-index: 10
+	padding: 0.5em 1em
+	font-size: 25px
+
+	@include tab( 50px, darken($monokai-white, 10%), $monokai-white, true )
+

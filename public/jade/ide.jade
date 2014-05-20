@@ -1,0 +1,120 @@
+doctype html
+html(lang="en")
+	head
+		style( type="text/css" ) .gravatar { background: url(#{user.gravatar}); }
+
+		link( rel="stylesheet" media="screen, projection" type="text/css" href="../css/stylesheets/main.css" )
+		
+		//- CodeMirror
+		link( rel="stylesheet" href="../codemirror/lib/codemirror.css" )
+		link( rel="stylesheet" href="../codemirror/addon/fold/foldgutter.css" )
+		link( rel="stylesheet" href="../codemirror/addon/dialog/dialog.css" )
+		link( rel="stylesheet" href="../codemirror/theme/monokai.css" )
+		script( src="../codemirror/lib/codemirror.js" )
+		script( src="../codemirror/addon/search/searchcursor.js" )
+		script( src="../codemirror/addon/search/search.js" )
+		script( src="../codemirror/addon/dialog/dialog.js" )
+		script( src="../codemirror/addon/edit/matchbrackets.js" )
+		script( src="../codemirror/addon/edit/closebrackets.js" )
+		script( src="../codemirror/addon/comment/comment.js" )
+		script( src="../codemirror/addon/wrap/hardwrap.js" )
+		script( src="../codemirror/addon/fold/foldcode.js" )
+		script( src="../codemirror/addon/fold/brace-fold.js" )
+
+		//- dynamically load these
+		script( src="../codemirror/mode/javascript/javascript.js" )
+		script( src="../codemirror/keymap/sublime.js" )
+
+
+		script( type="text/javascript" src="../jquery.min.js" )
+		script( type="text/javascript" src="../index.js" )
+
+		title edit.codes
+
+	body.ide-page
+
+		//- citation information in a dropdown
+		section.credits
+
+			div.tabs#title-tab edit.codes
+				div.corner.before
+				div.corner.after
+
+			div.half.links
+				//- Codio's ILOS button
+				a.icon.ilos( target="_blank" href="http://www.iloveopensource.io/projects/537107f587659fce66002807" style="background: url(https://github.com/codio/iloveopensource/blob/master/public/images/logo-lightbg.png?raw=true) no-repeat; background-size: contain;" )
+				a.icon.fa.fa-github( target="_blank" href="https://github.com/jonbrennecke/edit.codes" )
+
+			div.half.cite
+				p Edit.Codes 0.0.1 &bull; Created by Jon Brennecke 
+				p Code distributed under the 
+					<a target="_blank" href="http://opensource.org/licenses/mit-license.html">MIT License</a> &bull; 
+					<a target="_blank" href="https://github.com/jonbrennecke/edit.codes">Fork the repository on Github</a>
+				p Copyright © 2014 Jon Brennecke.
+
+
+		div.left-nav-bar-wrap
+			nav.left-nav-bar
+				div.icon-wrap
+					img.icon
+				ul
+					li
+						span.fa.fa-code
+					li
+						span.fa.fa-refresh
+					li
+						span.fa.fa-cogs
+
+		div.page-wrap
+
+			//- top navigation bar
+			nav.top-nav-bar
+				header.flat
+					div.header-actions
+						ul.user-menu
+							li.user
+
+								//- gravatar image
+								div.profile-img-wrap
+									div.profile-img.gravatar
+
+								h1.username #{user.name}
+
+							li.signin
+								a.fa.fa-sort-down
+
+				section.menu
+
+					//- left/right tab navigation buttons
+					div.tab-nav-buttons
+						span.fa.fa-arrow-left
+						span.fa.fa-arrow-right
+
+					ul.tabs
+						li.active tab 1
+							div.corner.before
+							div.corner.after
+						li tab 2
+							div.corner.before
+							div.corner.after
+						li 
+							span.fa.fa-plus
+							div.corner.before
+							div.corner.after
+						
+			section.ide
+				div.code#code-edit
+					div.actions
+						a.fa.fa-navicon
+						a.fa.fa-arrows-alt
+				div.code#console
+					div.actions
+						a.fa.fa-navicon
+						a.fa.fa-arrows-alt
+
+				nav.bottom-nav-bar
+					ul
+						li.social-links 
+							a.fa.fa-facebook
+							a.fa.fa-twitter
+							a.fa.fa-google-plus

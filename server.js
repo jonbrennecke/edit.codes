@@ -23,6 +23,7 @@
  * TODO 
  * 	- add chat app (websockets?)
  *	- collaborative coding
+ *  - 
  *
  */
 
@@ -133,9 +134,7 @@ app.get('/', function ( req, res ){
 		}
 	}
 
-	res.render("dash", data );
-
-
+	res.render("ide", data );
 
 });
 
