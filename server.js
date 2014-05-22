@@ -74,10 +74,11 @@ var PORT = 3000,
 	Script = require( __dirname + '/api/models/scripts'),
 	User = require( __dirname + '/api/models/user'),
 
+	// language core modules
+	python = require( __dirname + '/modules/python/python' ),
+
 	// init the mongodb database
 	db = require( __dirname + "/db.js" );
-
-
 
 
 // Express app stuffs
@@ -292,32 +293,36 @@ app.post('/register', function ( req, res ) {
 // ============================================================================================
 // POST api/run
 //
-// router.route('/run')
 
-// 	.post( function( req, res ) {
+
+router.route('/run')
+
+	.post( function( req, res ) {
 		
-// 		var script = new Script();
-// 		script.doc = req.body.doc;
+		var script = new Script();
+		script.stdin = req.body.doc;
 
-// 		// save the script and check for errors
-// 		script.save( function(err) {
-// 			if (err)
-// 				res.send(err);
 
-// 			octave.stdout.on( 'data', function ( data ) {
+		python.stdout.on( 'data', function ( data ) {
 
-// 				fs.readFile('tmp.out', "utf8", function (err, data) {
-// 			        if (err) throw err;
-// 				        res.send( { "stream" : "" + data } )
-// 			        });
-// 			    // }
-// 			});
+			script.stdout = data.toString();
+			res.send( { "script" : script });
 
-// 			octave.stdin.write( script.doc + '\n' );
+		});
 
-// 		});
+		// python.stderr.on( 'data', function ( data ) {
+
+		// 	script.stderr = data.toString();
+		// 	res.send( { "script" : script });
+
+		// });
+
+
+		// probably should return the whole script model
+		python.process.stdin.write( script.stdin + '\n' );
+
 		
-// 	})
+	})
 
 
 

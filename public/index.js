@@ -10,14 +10,14 @@ $(document).ready( function () {
 		value: "if ( true ) {\n\tconsole.log('hello world!');\n}",
 		indentUnit : 4,
 		indentWithTabs : true,
-	    lineNumbers: true,
-	    mode: "javascript",
-	    keyMap: "sublime",
-	    autoCloseBrackets: true,
-	    autofocus : true,
-	    matchBrackets: true,
-	    showCursorWhenSelecting: true,
-	    theme: "monokai"
+		lineNumbers: true,
+		mode: "javascript",
+		keyMap: "sublime",
+		autoCloseBrackets: true,
+		autofocus : true,
+		matchBrackets: true,
+		showCursorWhenSelecting: true,
+		theme: "monokai"
 	});
 
 

@@ -2,46 +2,24 @@ doctype html
 html(lang="en")
 	head
 		style( type="text/css" ) .gravatar { background: url(#{user.gravatar}); }
-
+		link( rel="stylesheet" media="screen, projection" type="text/css" href="../scripts/bower_components/CodeMirror/lib/codemirror.css" )
+		link( rel="stylesheet" media="screen, projection" type="text/css" href="../scripts/bower_components/CodeMirror/theme/monokai.css" )
 		link( rel="stylesheet" media="screen, projection" type="text/css" href="../css/stylesheets/main.css" )
-		
-		//- CodeMirror
-		link( rel="stylesheet" href="../codemirror/lib/codemirror.css" )
-		link( rel="stylesheet" href="../codemirror/addon/fold/foldgutter.css" )
-		link( rel="stylesheet" href="../codemirror/addon/dialog/dialog.css" )
-		link( rel="stylesheet" href="../codemirror/theme/monokai.css" )
-		script( src="../codemirror/lib/codemirror.js" )
-		script( src="../codemirror/addon/search/searchcursor.js" )
-		script( src="../codemirror/addon/search/search.js" )
-		script( src="../codemirror/addon/dialog/dialog.js" )
-		script( src="../codemirror/addon/edit/matchbrackets.js" )
-		script( src="../codemirror/addon/edit/closebrackets.js" )
-		script( src="../codemirror/addon/comment/comment.js" )
-		script( src="../codemirror/addon/wrap/hardwrap.js" )
-		script( src="../codemirror/addon/fold/foldcode.js" )
-		script( src="../codemirror/addon/fold/brace-fold.js" )
-
-		//- dynamically load these
-		script( src="../codemirror/mode/javascript/javascript.js" )
-		script( src="../codemirror/keymap/sublime.js" )
-
-
-		script( type="text/javascript" src="../jquery.min.js" )
-		script( type="text/javascript" src="../index.js" )
+		script( type="text/javascript" data-main="../scripts/main" src="../scripts/require.js" )
 
 		title edit.codes
 
 	body.ide-page
 
 		//- citation information in a dropdown
-		section.credits
+		section.layout.credits
 
 			div.tabs#title-tab edit.codes
 				div.corner.before
 				div.corner.after
 
 			div.half.links
-				//- Codio's ILOS button
+				//- Codio's "I Love Open Source" button
 				a.icon.ilos( target="_blank" href="http://www.iloveopensource.io/projects/537107f587659fce66002807" style="background: url(https://github.com/codio/iloveopensource/blob/master/public/images/logo-lightbg.png?raw=true) no-repeat; background-size: contain;" )
 				a.icon.fa.fa-github( target="_blank" href="https://github.com/jonbrennecke/edit.codes" )
 
@@ -53,19 +31,20 @@ html(lang="en")
 				p Copyright © 2014 Jon Brennecke.
 
 
-		div.left-nav-bar-wrap
+		div.layout.left-nav-bar-wrap
 			nav.left-nav-bar
 				div.icon-wrap
 					img.icon
 				ul
 					li
-						span.fa.fa-code
+						a.fa.fa-refresh#run( alt="Run" )
 					li
-						span.fa.fa-refresh
+						a.fa.fa-folder-o#files( alt="File Manager" )
 					li
-						span.fa.fa-cogs
+						a.fa.fa-cogs#settings( alt="Settings" )
 
-		div.page-wrap
+
+		div.layout.page-wrap
 
 			//- top navigation bar
 			nav.top-nav-bar
@@ -90,7 +69,7 @@ html(lang="en")
 						span.fa.fa-arrow-left
 						span.fa.fa-arrow-right
 
-					ul.tabs
+					ul.tabs#code-mirror-tabs
 						li.active tab 1
 							div.corner.before
 							div.corner.after
@@ -103,7 +82,7 @@ html(lang="en")
 							div.corner.after
 						
 			section.ide
-				div.code#code-edit
+				div.code#code-mirror
 					div.actions
 						a.fa.fa-navicon
 						a.fa.fa-arrows-alt

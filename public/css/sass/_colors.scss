@@ -9,6 +9,9 @@ $monokai-blue: #54ceef;
 $monokai-green: #a6e22d;
 $monokai-yellow: #e6db74;
 $monokai-purple: #ae81ff;
+$monokai-orange: #fd8c20;
+
+$theme-bg: desaturate($monokai-blue,60%);
 
 // social media colors
 $facebook: #3b5998;

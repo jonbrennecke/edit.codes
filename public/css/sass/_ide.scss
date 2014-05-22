@@ -1,0 +1,100 @@
+section.menu {
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	$menu-height: ($height - 15px);
+	$menu-bg-color: $monokai-white;
+
+	font-size: ($menu-height*0.5);
+	height: $menu-height;
+	width: 100%;
+	@include box-sizing( border-box );
+
+	.tab-nav-buttons {
+		position: relative;
+		float: left;
+		font-size: 15px;
+		margin-right: 1em;
+		margin-top: $menu-height - 30px;
+		color: $monokai-bg;
+
+		span { padding: 0.5em; }
+	}
+
+	li {
+		display: inline-block;
+		@extend .ubuntu;
+	}
+
+	.tabs {
+
+		li {
+
+			@include tab( $menu-height * 0.5, lighten($monokai-bg,10%), $theme-bg, false );
+
+			// make sure $tab-height is an even number
+			// if it's not, we'll be one pixel off when we divide the height by 2
+			$tab-height: $menu-height * 0.5;
+			$tab-height: if( $tab-height % 2 == 0, $tab-height, $tab-height + 1 );
+
+			position: relative;
+			margin: ($menu-height - $tab-height) 1em 0 1em;
+			padding: 0.5em 1.5em;
+			font-size: $menu-height * 0.25;
+			height: $tab-height;
+			text-align: center;
+			box-sizing: border-box;
+			color: darken($monokai-white,10%);
+			cursor: pointer;
+
+			// non-active tabs bg
+			background: lighten($monokai-bg,10%);
+
+			&.active {
+				background: $monokai-bg;
+
+				.before::before, .after::before { background: $monokai-bg; }
+			}
+		}
+	}
+}
+
+section.ide {
+	position: relative;
+	width: 100%;
+	height: calc(100% - (75px * 1.5 + 10px) );
+	padding: 0 5px;
+
+	.actions {
+		position: absolute;
+		width: 1em;
+		font-size: 20px;
+		z-index: 5;
+		right: 25px;
+		color: darken($monokai-white,20%);
+		
+		.fa { margin-bottom: 0.5em; }
+	}
+
+	.code {
+		position: relative;
+		width: calc(50% - 7.5px);
+		height: 100%;
+		float: left;
+		background: $monokai-bg;
+		box-sizing: border-box;
+		padding: 25px;
+		font-size: 11pt;
+		border-radius: 15px;
+	}
+
+	#code-mirror { margin-right: 5px; }
+
+	#console {
+		font-family: monospace;
+		color: $monokai-white;
+	}
+
+}

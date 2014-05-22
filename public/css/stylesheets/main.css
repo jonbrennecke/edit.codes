@@ -2584,7 +2584,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  * CSS Only tabs using background colored circles to oclude the foreground
  *
  */
-/* line 1, ../sass/navigation.sass */
+/* line 1, ../sass/_navigation.sass */
 .left-nav-bar-wrap {
   position: relative;
   height: 100%;
@@ -2592,7 +2592,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   float: left;
 }
 
-/* line 7, ../sass/navigation.sass */
+/* line 7, ../sass/_navigation.sass */
 .page-wrap {
   position: relative;
   float: left;
@@ -2603,7 +2603,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 0;
 }
 
-/* line 16, ../sass/navigation.sass */
+/* line 16, ../sass/_navigation.sass */
 nav {
   position: relative;
   width: 100%;
@@ -2611,25 +2611,25 @@ nav {
   box-sizing: border-box;
   z-index: 2;
 }
-/* line 23, ../sass/navigation.sass */
+/* line 23, ../sass/_navigation.sass */
 nav.bottom-nav-bar {
   float: left;
   height: 37.5px;
   width: 100%;
   margin-top: 5px;
 }
-/* line 30, ../sass/navigation.sass */
+/* line 30, ../sass/_navigation.sass */
 nav.bottom-nav-bar ul {
   list-style-type: none;
   margin-right: 5px;
 }
-/* line 34, ../sass/navigation.sass */
+/* line 34, ../sass/_navigation.sass */
 nav.bottom-nav-bar ul li {
   display: inline-block;
   height: 37.5px;
   float: right;
 }
-/* line 39, ../sass/navigation.sass */
+/* line 39, ../sass/_navigation.sass */
 nav.bottom-nav-bar ul a {
   position: relative;
   display: block;
@@ -2644,30 +2644,30 @@ nav.bottom-nav-bar ul a {
   color: #f8f8f2;
   margin-right: 5px;
 }
-/* line 53, ../sass/navigation.sass */
+/* line 53, ../sass/_navigation.sass */
 nav.bottom-nav-bar ul .fa-facebook {
   background: #3b5998;
 }
-/* line 55, ../sass/navigation.sass */
+/* line 55, ../sass/_navigation.sass */
 nav.bottom-nav-bar ul .fa-twitter {
   background: #00acee;
 }
-/* line 57, ../sass/navigation.sass */
+/* line 57, ../sass/_navigation.sass */
 nav.bottom-nav-bar ul .fa-google-plus {
   background: #d34836;
 }
-/* line 60, ../sass/navigation.sass */
+/* line 60, ../sass/_navigation.sass */
 nav.left-nav-bar {
   z-index: 5;
   height: 100%;
 }
-/* line 64, ../sass/navigation.sass */
+/* line 64, ../sass/_navigation.sass */
 nav.left-nav-bar .icon-wrap {
   height: 75px;
   width: 100%;
   box-sizing: border-box;
 }
-/* line 70, ../sass/navigation.sass */
+/* line 70, ../sass/_navigation.sass */
 nav.left-nav-bar ul li {
   position: relative;
   display: block;
@@ -2679,19 +2679,24 @@ nav.left-nav-bar ul li {
   height: 60px;
   width: 60px;
   box-sizing: border-box;
-  color: #f8f8f2;
+  color: #e6e6d1;
   transition: background 0.1s;
   border-radius: 50%;
   background: #272822;
+  cursor: pointer;
 }
-/* line 86, ../sass/navigation.sass */
+/* line 87, ../sass/_navigation.sass */
+nav.left-nav-bar ul li:hover {
+  background: #e7064f;
+}
+/* line 91, ../sass/_navigation.sass */
 nav.top-nav-bar {
   position: relative;
   width: 100%;
   height: 75px;
-  background: #f8f8f2;
+  background: #8caeb7;
 }
-/* line 92, ../sass/navigation.sass */
+/* line 97, ../sass/_navigation.sass */
 nav.top-nav-bar .header-actions {
   position: absolute;
   top: 0;
@@ -2701,17 +2706,17 @@ nav.top-nav-bar .header-actions {
   padding: 0.5em;
   box-sizing: border-box;
 }
-/* line 101, ../sass/navigation.sass */
+/* line 106, ../sass/_navigation.sass */
 nav.top-nav-bar .header-actions li {
   position: relative;
   float: left;
 }
-/* line 105, ../sass/navigation.sass */
+/* line 110, ../sass/_navigation.sass */
 nav.top-nav-bar .header-actions a.fa-sort-down {
   font-size: 15px;
   padding-top: 1.25em;
 }
-/* line 110, ../sass/navigation.sass */
+/* line 115, ../sass/_navigation.sass */
 nav.top-nav-bar .header-actions .user .profile-img-wrap {
   position: relative;
   float: left;
@@ -2721,13 +2726,13 @@ nav.top-nav-bar .header-actions .user .profile-img-wrap {
   box-sizing: border-box;
   border-radius: 50%;
 }
-/* line 119, ../sass/navigation.sass */
+/* line 124, ../sass/_navigation.sass */
 nav.top-nav-bar .header-actions .user .profile-img-wrap .profile-img {
   height: 100%;
   background-size: 100% auto;
   border-radius: inherit;
 }
-/* line 124, ../sass/navigation.sass */
+/* line 129, ../sass/_navigation.sass */
 nav.top-nav-bar .header-actions h1.username {
   position: relative;
   float: left;
@@ -2741,7 +2746,7 @@ nav.top-nav-bar .header-actions h1.username {
   position: relative;
   top: -95px;
   height: 100px;
-  background: #e6e6d1;
+  background: #6d98a3;
   font-size: 10.5pt;
   color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -2799,7 +2804,7 @@ nav.top-nav-bar .header-actions h1.username {
   position: absolute;
   cursor: pointer;
   right: 20%;
-  background: #e6e6d1;
+  background: #6d98a3;
   bottom: -50px;
   z-index: 10;
   padding: 0.5em 1em;
@@ -2822,7 +2827,7 @@ nav.top-nav-bar .header-actions h1.username {
 #title-tab div.corner::after {
   content: "";
   position: absolute;
-  background: #f8f8f2;
+  background: #8caeb7;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -2833,7 +2838,7 @@ nav.top-nav-bar .header-actions h1.username {
   position: absolute;
   height: 25px;
   width: 25px;
-  background: #e6e6d1;
+  background: #6d98a3;
 }
 /* line 56, ../sass/_functions.sass */
 #title-tab div.corner.before::before {
@@ -2854,7 +2859,7 @@ nav.top-nav-bar .header-actions h1.username {
   right: 100%;
 }
 
-/* line 1, ../sass/ide.scss */
+/* line 1, ../sass/_ide.scss */
 section.menu {
   position: absolute;
   bottom: 0;
@@ -2866,7 +2871,7 @@ section.menu {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 15, ../sass/ide.scss */
+/* line 15, ../sass/_ide.scss */
 section.menu .tab-nav-buttons {
   position: relative;
   float: left;
@@ -2875,37 +2880,33 @@ section.menu .tab-nav-buttons {
   margin-top: 30px;
   color: #272822;
 }
-/* line 23, ../sass/ide.scss */
+/* line 23, ../sass/_ide.scss */
 section.menu .tab-nav-buttons span {
   padding: 0.5em;
 }
-/* line 26, ../sass/ide.scss */
+/* line 26, ../sass/_ide.scss */
 section.menu li {
   display: inline-block;
 }
-/* line 33, ../sass/ide.scss */
+/* line 33, ../sass/_ide.scss */
 section.menu .tabs li {
+  height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
   position: relative;
   margin: 30px 1em 0 1em;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.5em;
   font-size: 15px;
   height: 30px;
   text-align: center;
   box-sizing: border-box;
-  color: #f8f8f2;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  color: #e6e6d1;
+  cursor: pointer;
   background: #424439;
 }
-/* line 54, ../sass/ide.scss */
-section.menu .tabs li.active {
-  background: #272822;
-}
-/* line 57, ../sass/ide.scss */
-section.menu .tabs li.active .before::before, section.menu .tabs li.active .after::before {
-  background: #272822;
-}
-/* line 60, ../sass/ide.scss */
+/* line 33, ../sass/_functions.sass */
 section.menu .tabs li div.corner {
   position: absolute;
   width: 100%;
@@ -2913,63 +2914,71 @@ section.menu .tabs li div.corner {
   left: 0;
   top: 0;
 }
-/* line 67, ../sass/ide.scss */
+/* line 40, ../sass/_functions.sass */
 section.menu .tabs li div.corner::after {
-  content: '';
+  content: "";
   position: absolute;
-  background: #f8f8f2;
+  background: #8caeb7;
   height: 30px;
   width: 30px;
   border-radius: 50%;
 }
-/* line 76, ../sass/ide.scss */
+/* line 48, ../sass/_functions.sass */
 section.menu .tabs li div.corner::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 15px;
   width: 15px;
   background: #424439;
 }
-/* line 85, ../sass/ide.scss */
+/* line 56, ../sass/_functions.sass */
 section.menu .tabs li div.corner.before::before {
   left: 100%;
   bottom: 0;
 }
-/* line 89, ../sass/ide.scss */
+/* line 60, ../sass/_functions.sass */
 section.menu .tabs li div.corner.before::after {
   left: 100%;
 }
-/* line 93, ../sass/ide.scss */
+/* line 64, ../sass/_functions.sass */
 section.menu .tabs li div.corner.after::before {
   right: 100%;
   bottom: 0;
 }
-/* line 97, ../sass/ide.scss */
+/* line 68, ../sass/_functions.sass */
 section.menu .tabs li div.corner.after::after {
   right: 100%;
 }
+/* line 55, ../sass/_ide.scss */
+section.menu .tabs li.active {
+  background: #272822;
+}
+/* line 58, ../sass/_ide.scss */
+section.menu .tabs li.active .before::before, section.menu .tabs li.active .after::before {
+  background: #272822;
+}
 
-/* line 104, ../sass/ide.scss */
+/* line 64, ../sass/_ide.scss */
 section.ide {
   position: relative;
   width: 100%;
   height: calc(100% - (75px * 1.5 + 10px) );
   padding: 0 5px;
 }
-/* line 110, ../sass/ide.scss */
+/* line 70, ../sass/_ide.scss */
 section.ide .actions {
   position: absolute;
   width: 1em;
-  font-size: 25px;
+  font-size: 20px;
   z-index: 5;
   right: 25px;
-  color: #f8f8f2;
+  color: #d4d4b0;
 }
-/* line 118, ../sass/ide.scss */
+/* line 78, ../sass/_ide.scss */
 section.ide .actions .fa {
   margin-bottom: 0.5em;
 }
-/* line 121, ../sass/ide.scss */
+/* line 81, ../sass/_ide.scss */
 section.ide .code {
   position: relative;
   width: calc(50% - 7.5px);
@@ -2981,25 +2990,39 @@ section.ide .code {
   font-size: 11pt;
   border-radius: 15px;
 }
-/* line 133, ../sass/ide.scss */
-section.ide #code-edit {
+/* line 93, ../sass/_ide.scss */
+section.ide #code-mirror {
   margin-right: 5px;
+}
+/* line 95, ../sass/_ide.scss */
+section.ide #console {
+  font-family: monospace;
+  color: #f8f8f2;
 }
 
 /* line 14, ../sass/main.sass */
 html {
   height: 100%;
   width: 100%;
-  background: #f8f8f2;
+  background: #8caeb7;
   overflow: hidden;
 }
 
-/* line 21, ../sass/main.sass */
+/* line 23, ../sass/main.sass */
+.layout.dropdown.credits {
+  top: 0px;
+}
+/* line 26, ../sass/main.sass */
+.layout.dropdown.left-nav-bar-wrap, .layout.dropdown.page-wrap {
+  top: 100px;
+}
+
+/* line 30, ../sass/main.sass */
 body {
   height: 100%;
 }
 
-/* line 24, ../sass/main.sass */
-.ubuntu, nav.top-nav-bar .header-actions h1.username, .credits, #title-tab, section.menu li, section.ide #code-edit .Code-Mirror {
+/* line 33, ../sass/main.sass */
+.ubuntu, nav.top-nav-bar .header-actions h1.username, .credits, #title-tab, section.menu li {
   font-family: "Ubuntu", Helvetica, Arial, sans-serif;
 }
