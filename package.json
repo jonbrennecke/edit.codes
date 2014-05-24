@@ -1,0 +1,28 @@
+{
+	"name" : "edit.codes",
+	"version" : "0.0.1",
+	"description" : "the website edit.codes",
+	"main" : "server.js",
+	"man" : "README.md",
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/jonbrennecke/edit.codes",
+	},
+	"config" : {
+		"port" : "8080"
+	},
+	"dependencies" : {
+		"bcrypt" : "*",
+		"body-parser" : "*",
+		"bower" : "*",
+		"express" : ">=4.0.0",
+		"jade" : "*",
+		"mongoose" : "*",
+		"passport" : "*",
+		"passport-local" : "*",
+		"through" : "*"
+	},
+	"scripts" : {
+
+	}
+}
