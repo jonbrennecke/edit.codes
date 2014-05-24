@@ -1,0 +1,95 @@
+@import "basic"
+@import url("http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400")
+
+
+.page-wrap
+
+	.title-sequence
+		position: absolute
+		top: 30%
+		left: 50%
+		margin-left: -13em
+		width: 20em
+		border-radius: 10px
+		font-size: 18pt
+		padding: 3em
+		z-index: 2
+		background: lighten($monokai-bg,10%)
+
+		p
+			color: $monokai-yellow
+			white-space: pre-wrap
+			font-family: monospace
+			font-size: 18pt
+			text-align: center
+			text-shadow: 2px 2px 0px darken($monokai-yellow,40%)
+
+		.subtitle
+			font-size: 12pt
+
+		.subsubtitle
+			margin-top: 1em
+			font-size: 18pt
+			color: $monokai-red
+			text-shadow: 2px 2px 0px darken($monokai-red,35%)
+
+		.tabs
+			@extend .ubuntu
+			$tab-height: 30px
+			position: absolute
+			top: -$tab-height
+			text-align: center
+			background: lighten($monokai-bg,10%)
+			padding: 0.5em 1.5em
+			box-sizing: border-box
+			color: darken($monokai-white,20%)
+			@include tab( $tab-height, lighten($monokai-bg,10%), $theme-bg )
+
+@mixin cloud( $height, $width )
+	position: absolute
+	background: darken($monokai-white,5%)
+	height: $height
+	width: $width
+	z-index: 2
+
+	.cloudyness
+		position: absolute
+		background: inherit
+		height: $width
+		width: $width
+		border-radius: 50%
+		bottom: $height / 2
+		box-shadow: -1px -1px 1px darken($monokai-white,25%)
+
+	&::before, &::after
+		content: ''
+		position: absolute
+		border-radius: 50%
+		background: inherit
+		bottom: 0
+		box-shadow: -1px -1px 1px darken($monokai-white,25%)
+		
+	&::before	
+		height: $height
+		width: $height
+		left: -$height/2
+
+	&::after
+		height: $width
+		width: $width
+		right: -$width/2
+
+.cloud1
+	@include cloud(7em,10em)
+	top: 70%
+	left: 20%
+	// z-index: 1
+
+.cloud2
+	@include cloud(7em,6.5em)
+	top: 25%
+	left: 75%
+
+
+
+

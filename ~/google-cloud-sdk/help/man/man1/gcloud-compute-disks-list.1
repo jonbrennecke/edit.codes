@@ -1,0 +1,72 @@
+'\" t
+.\"     Title: gcloud-compute-disks-list
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 05/20/2014
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "GCLOUD\-COMPUTE\-DISKS\-LIST" "1" "05/20/2014" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gcloud-compute-disks-list \- List Google Compute Engine persistent disks\&.
+.SH "SYNOPSIS"
+.sp
+\fBgcloud compute disks list\fR [NAME_REGEX \&...] [\-\-limit LIMIT] [\-\-raw\-links] [\-\-sort\-by SORT_BY] [\-\-zones ZONE [ZONE \&...]] [\-h, \-\-help] [\-l]
+.SH "POSITIONAL ARGUMENTS"
+.PP
+\fI[NAME_REGEX \&...]\fR
+.RS 4
+Name regular expressions used to filter the resources fetched\&. The regular expressions must conform to the re2 syntax (see
+https://code\&.google\&.com/p/re2/wiki/Syntax)\&.
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-limit\fR \fILIMIT\fR
+.RS 4
+The maximum number of results\&.
+.RE
+.PP
+\fB\-\-raw\-links\fR
+.RS 4
+If provided, resource references in output from the server will not be condensed for readability\&. For example, when listing operations, if a targetLink is \(lqhttps://www\&.googleapis\&.com/compute/v1/projects/my\-project/zones/us\-central2\-a/instances/my\-instance\(rq, \(lqus\-central2\-a/instances/my\-instance\(rq is shown for brevity\&. This behavior can be turned off using this flag\&.
+.RE
+.PP
+\fB\-\-sort\-by\fR \fISORT_BY\fR
+.RS 4
+A field to sort by\&. To perform a descending\-order sort, prefix the value of this flag with a tilde (\(lq~\(rq)\&.
+.RE
+.PP
+\fB\-\-zones\fR \fIZONE [ZONE \&...]\fR
+.RS 4
+If provided, only resources from the given zones are queried\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
+.PP
+\fB\-l\fR
+.RS 4
+If provided, prints a human\-readable table of useful resource data\&. The columns of the table do not necessarily map one\-to\-one to the properties defined in the API\&. For example, the external IP address of an instance is displayed under the \(lqexternalIP\(rq column, but in the API the external IP address is stored under \(lqnetworkInterfaces[0]\&.accessConfigs[0]\&.natIP\(rq\&. The table output is for convenience and should not be taken to reflect the API verbatim\&.
+.RE

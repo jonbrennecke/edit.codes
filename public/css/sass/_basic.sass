@@ -1,0 +1,27 @@
+@import url("http://fonts.googleapis.com/css?family=Ubuntu:300,400")
+@import "compass/reset"
+@import "compass/css3/images"
+@import "../font-awesome/scss/font-awesome"
+@import "const"
+@import "functions"
+@import "colors"
+@import "credits"
+
+html
+	height: 100%
+	width: 100%
+	background: $theme-bg
+
+body
+	position: relative
+	height: 100%
+
+.layout
+	&.dropdown
+		&.credits
+			top: 0px
+		&.left-nav-bar-wrap, &.page-wrap
+			top: 100px
+
+.ubuntu
+	font-family: "Ubuntu", Helvetica, Arial, sans-serif

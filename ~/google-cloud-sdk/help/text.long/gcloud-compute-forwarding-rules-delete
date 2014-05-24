@@ -1,0 +1,22 @@
+NAME
+       gcloud-compute-forwarding-rules-delete - Delete forwarding rules
+
+SYNOPSIS
+       gcloud compute forwarding-rules delete NAME [NAME ...] [--region
+       REGION] [-h, --help]
+
+DESCRIPTION
+       gcloud compute forwarding-rules delete deletes one or more Google
+       Compute Engine forwarding rules.
+
+POSITIONAL ARGUMENTS
+       NAME [NAME ...]
+           The resources to delete.
+
+FLAGS
+       --region REGION
+           The region of the resources to delete.
+
+       --help
+           Print a summary help and exit.
+

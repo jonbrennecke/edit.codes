@@ -100,6 +100,23 @@ app.use( passport.session() );
 app.use( '/api', router );
 
 
+// serialize the user data
+// TODO put this in a module and load asyncly
+
+// generate a link to the user's gravatar
+var gravatar = "http://www.gravatar.com/avatar/";
+gravatar += crypto.createHash('md5').update( "jpbrennecke@gmail.com".toLowerCase().trim() ).digest("hex");
+gravatar += "?s=256";
+
+var data = {
+	user : {
+		name : "Jon",
+		email : "jpbrennecke@gmai.com",
+		gravatar : gravatar
+	}
+}
+
+
 /**
  *
  * passport requires these functions to serialize user info for a persistant session
@@ -122,18 +139,13 @@ passport.deserializeUser( function(id, done) {
 // we'll be changing this later (TODO)
 app.get('/', function ( req, res ){
 
-	// generate a link to the user's gravatar
-	var gravatar = "http://www.gravatar.com/avatar/";
-	gravatar += crypto.createHash('md5').update( "jpbrennecke@gmail.com".toLowerCase().trim() ).digest("hex");
-	gravatar += "?s=256";
+	res.render("index", data );
 
-	var data = {
-		user : {
-			name : "Jon",
-			email : "jpbrennecke@gmai.com",
-			gravatar : gravatar
-		}
-	}
+});
+
+// render & serve 'public/haml/signup.haml' as the root file for now
+// we'll be changing this later (TODO)
+app.get('/ide', function ( req, res ){
 
 	res.render("ide", data );
 

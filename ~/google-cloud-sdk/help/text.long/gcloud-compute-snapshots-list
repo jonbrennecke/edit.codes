@@ -1,0 +1,42 @@
+NAME
+       gcloud-compute-snapshots-list - List Google Compute Engine snapshots.
+
+SYNOPSIS
+       gcloud compute snapshots list [NAME_REGEX ...] [--limit LIMIT]
+       [--raw-links] [--sort-by SORT_BY] [-h, --help] [-l]
+
+POSITIONAL ARGUMENTS
+       [NAME_REGEX ...]
+           Name regular expressions used to filter the resources fetched. The
+           regular expressions must conform to the re2 syntax (see
+           https://code.google.com/p/re2/wiki/Syntax).
+
+FLAGS
+       --limit LIMIT
+           The maximum number of results.
+
+       --raw-links
+           If provided, resource references in output from the server will not
+           be condensed for readability. For example, when listing operations,
+           if a targetLink is
+           "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central2-a/instances/my-instance",
+           "us-central2-a/instances/my-instance" is shown for brevity. This
+           behavior can be turned off using this flag.
+
+       --sort-by SORT_BY
+           A field to sort by. To perform a descending-order sort, prefix the
+           value of this flag with a tilde ("~").
+
+       --help
+           Print a summary help and exit.
+
+       -l
+           If provided, prints a human-readable table of useful resource data.
+           The columns of the table do not necessarily map one-to-one to the
+           properties defined in the API. For example, the external IP address
+           of an instance is displayed under the "externalIP" column, but in
+           the API the external IP address is stored under
+           "networkInterfaces[0].accessConfigs[0].natIP". The table output is
+           for convenience and should not be taken to reflect the API
+           verbatim.
+

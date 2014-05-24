@@ -1,0 +1,61 @@
+NAME
+       gcloud-compute-forwarding-rules-create - Create a forwarding rule to
+       direct network traffic to a load balancer
+
+SYNOPSIS
+       gcloud compute forwarding-rules create NAME [--address ADDRESS]
+       [--description DESCRIPTION] [--ip-protocol IP_PROTOCOL] [--port-range
+       PORT-PORT] [--region REGION] [--target-instance TARGET_INSTANCE |
+       --target-pool TARGET_POOL] [-h, --help]
+
+DESCRIPTION
+       gcloud compute forwarding-rules create is used to create a forwarding
+       rule. Forwarding rules match and direct certain types of traffic to a
+       load balancer which is controlled by a target pool or a single instance
+       that is controlled by a target instance. For more information on load
+       balancing, see
+       https://developers.google.com/compute/docs/load-balancing/.
+
+       When creating a forwarding rule, either "--target-instance" or
+       "--target-pool" must be specified.
+
+POSITIONAL ARGUMENTS
+       NAME
+           The name of the forwarding rule.
+
+FLAGS
+       --address ADDRESS
+           The external IP address that the forwarding rule will serve. All
+           traffic sent to this IP address is directed to the virtual machines
+           that are in the target pool pointed to by the forwarding rule. If
+           the value is a reserved IP address, the address must live in the
+           same region as the forwarding rule. If this flag is omitted, an
+           ephemeral IP address is assigned.
+
+       --description DESCRIPTION
+           An optional textual description for the forwarding rule.
+
+       --ip-protocol IP_PROTOCOL
+           The IP protocol that the rule will serve. If left empty, TCP is
+           used. Supported protocols are: AH, ESP, SCTP, TCP, UDP.
+
+       --port-range PORT-PORT
+           If specified, only packets addressed to ports in the specified
+           range will be forwarded. If not specified, all ports are matched.
+
+       --region REGION
+           The region in which the forwarding rule will be created
+
+       --target-instance TARGET_INSTANCE
+           The target instance that will receive the traffic. The target
+           instance must be in a zone that's part of the forwarding rule's
+           region. The value of this flag can be either the URI of the target
+           instance or a suffix of it containing the zone such as
+           "us-central2-a/targetInstances/my-target-instance".
+
+       --target-pool TARGET_POOL
+           The target pool that will receive the traffic.
+
+       --help
+           Print a summary help and exit.
+

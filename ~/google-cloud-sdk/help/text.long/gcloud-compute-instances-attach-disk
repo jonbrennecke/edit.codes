@@ -1,0 +1,50 @@
+NAME
+       gcloud-compute-instances-attach-disk - Attach a disk to an instance
+
+SYNOPSIS
+       gcloud compute instances attach-disk INSTANCE [--device-name
+       DEVICE_NAME] --disk DISK [--mode MODE; default="rw"] [--zone ZONE] [-h,
+       --help]
+
+DESCRIPTION
+       gcloud compute instances attach-disk is used to attach a disk to an
+       instance. For example,
+
+           $ compute instances attach-disk my-instance --disk my-disk
+             --zone us-central1-a
+
+       attaches the disk named "my-disk" to the instance named "my-instance"
+       in zone "us-central1-a".
+
+POSITIONAL ARGUMENTS
+       INSTANCE
+           The name of, or a fully- or partially-qualified path to the
+           instance to which the disk should be attached. Using a path
+           containing the zone will render the --zone flag optional. For
+           example, providing "us-central2-a/instances/my-instance" is
+           equivalent to providing "my-instance" with "--zone us-central2-a".
+
+FLAGS
+       --device-name DEVICE_NAME
+           An optional name that indicates the disk name the guest operating
+           system will see.
+
+       --disk DISK
+           The name of, or a fully- or partially-qualified path to the disk to
+           attach to the instance. Using a path containing the zone will
+           render the --zone flag optional. For example, providing
+           "us-central2-a/instances/my-disk" is equivalent to providing
+           "my-disk" with "--zone us-central2-a".
+
+       --mode MODE
+           Specifies the mode of the disk. Supported options are "ro" for
+           read-only and "rw" for read-write. If omitted, "rw" is used as a
+           default. It is an error to attach a disk in read-write mode to more
+           than one instance.
+
+       --zone ZONE
+           The zone in which the instance and disk reside.
+
+       --help
+           Print a summary help and exit.
+

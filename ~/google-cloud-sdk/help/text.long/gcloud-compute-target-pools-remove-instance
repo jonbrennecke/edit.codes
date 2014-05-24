@@ -1,0 +1,31 @@
+NAME
+       gcloud-compute-target-pools-remove-instance - Remove instances from a
+       target pool
+
+SYNOPSIS
+       gcloud compute target-pools remove-instance NAME --instances INSTANCE
+       [INSTANCE ...] [--region REGION] [-h, --help]
+
+DESCRIPTION
+       gcloud compute target-pools remove-instance is used to remove one or
+       more instances from a target pool. For more information on health
+       checks and load balancing, see
+       https://developers.google.com/compute/docs/load-balancing/.
+
+POSITIONAL ARGUMENTS
+       NAME
+           The name of the target pool from which to remove the instances.
+
+FLAGS
+       --instances INSTANCE [INSTANCE ...]
+           Specifies a list of instances that will be removed from this target
+           pool. Each entry must be specified by a relative or fully-qualified
+           path to the instance that includes the zone (e.g., "--instances
+           us-central1-a/instances/my-instance").
+
+       --region REGION
+           The region of the target pool.
+
+       --help
+           Print a summary help and exit.
+

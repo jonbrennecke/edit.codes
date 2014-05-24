@@ -1,0 +1,82 @@
+NAME
+       gcloud-compute-copy-files - Copy files to and from Google Compute
+       Engine virtual machines
+
+SYNOPSIS
+       gcloud compute copy-files [[USER@]INSTANCE:]SOURCE
+       [[[USER@]INSTANCE:]SOURCE ...] [[USER@]INSTANCE:]DEST [--recursive, -r]
+       [--ssh-key-file SSH_KEY_FILE] [--zone ZONE] [-h, --help]
+
+DESCRIPTION
+       gcloud compute copy-files copies files between virtual machines and
+       your local machine. Under the covers, scp(1) is used to facilitate the
+       transfer. Hosts involved can only be Compute Engine Virtual machines
+       and your local machine.
+
+       To denote a remote file, prefix the file name with the virtual machine
+       instance's name (e.g., "my-instance:/my-file"). To denote a local file,
+       do not add a prefix to the file name (e.g., "/my-file"). For example,
+       to copy a number of remote files to a local directory, you can run:
+
+           $ gcloud compute copy-files \
+               my-instance-1:~/file-1 \
+               my-instance-2:~/file-2 \
+               ~/my-destination \
+               --zone us-central2-a
+
+       In the above example, "/file-1" from "my-instance-1" and "/file-2" from
+       "my-instance-2" are copied to the local directory "~/my-destination".
+
+       Conversely, files from your local compute can be copied to the virtual
+       machines:
+
+           $ gcloud compute copy-files \
+               ~/my-file \
+               my-instance:~/remote-destination \
+               --zone us-central2-a
+
+       Note that the zone of the instances were provided using "--zone". It's
+       possible to specify the zone on a per-instance basis by using
+       partially-qualified paths:
+
+           $ gcloud compute copy-files \
+               us-central2-a/instances/my-instance-1:~/file-1 \
+               europe-west1-a/instnaces/my-instance-2:~/file-2 \
+               ~/my-destination
+
+       When omitting "--zone", fight the urge to use full URIs for the
+       instances (e.g.,
+       "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance")
+       because positional arguments are split on the first colon.
+
+       If a local file contains a colon (":"), you can specify it by either
+       using an absolute path or a path that begins with "./".
+
+       Copies involving a remote source and a remote destination will go
+       through the local host. This is done because in most cases, a remote
+       source will not know the remote destination's host key fingerprint, so
+       a direct copy will likely fail. If performance is important (e.g.,
+       large files), SSH into the remote destination and issue the copy
+       command from there.
+
+POSITIONAL ARGUMENTS
+       [[USER@]INSTANCE:]SOURCE [[[USER@]INSTANCE:]SOURCE ...]
+           Specifies a source file.
+
+       [[USER@]INSTANCE:]DEST
+           Specifies a destination for the source files.
+
+FLAGS
+       --recursive
+           Recursively copy entire directories.
+
+       --ssh-key-file SSH_KEY_FILE
+           The path to the SSH key file. By deault, this is
+           "~/.ssh/google_compute_engine".
+
+       --zone ZONE
+           The zone of the instances.
+
+       --help
+           Print a summary help and exit.
+

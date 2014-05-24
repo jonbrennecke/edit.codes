@@ -1,0 +1,64 @@
+'\" t
+.\"     Title: gcloud-compute-target-pools-set-backup
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 05/20/2014
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "GCLOUD\-COMPUTE\-TARGET\-POOLS\-SET\-BACKUP" "1" "05/20/2014" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gcloud-compute-target-pools-set-backup \- Set a backup pool for a target pool
+.SH "SYNOPSIS"
+.sp
+\fBgcloud compute target\-pools set\-backup\fR NAME \-\-backup\-pool BACKUP_POOL \-\-failover\-ratio FAILOVER_RATIO [\-\-region REGION] [\-h, \-\-help]
+.SH "DESCRIPTION"
+.sp
+\fBgcloud compute target\-pools set\-backup\fR is used to set a backup target pool for a primary target pool, which defines the fallback behavior of the primary pool\&. If the ratio of the healthy instances in the primary pool is at or below the specified \(lq\-\-failover\-ratio value\(rq, then traffic arriving at the load\-balanced IP address will be directed to the backup pool\&.
+.SH "POSITIONAL ARGUMENTS"
+.PP
+\fINAME\fR
+.RS 4
+The name of the target pool for which to set the backup pool\&.
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-backup\-pool\fR \fIBACKUP_POOL\fR
+.RS 4
+Name of the target pool that will serve as backup\&.
+.RE
+.PP
+\fB\-\-failover\-ratio\fR \fIFAILOVER_RATIO\fR
+.RS 4
+The new failover ratio value for the target pool\&. This must be a float in the range of [0, 1]\&.
+.RE
+.PP
+\fB\-\-region\fR \fIREGION\fR
+.RS 4
+The region of the target pool\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Print a summary help and exit\&.
+.RE

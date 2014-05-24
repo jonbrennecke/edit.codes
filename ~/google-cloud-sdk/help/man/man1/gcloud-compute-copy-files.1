@@ -1,0 +1,123 @@
+'\" t
+.\"     Title: gcloud-compute-copy-files
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 05/20/2014
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "GCLOUD\-COMPUTE\-COPY\-FILES" "1" "05/20/2014" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gcloud-compute-copy-files \- Copy files to and from Google Compute Engine virtual machines
+.SH "SYNOPSIS"
+.sp
+\fBgcloud compute copy\-files\fR [[USER@]INSTANCE:]SOURCE [[[USER@]INSTANCE:]SOURCE \&...] [[USER@]INSTANCE:]DEST [\-\-recursive, \-r] [\-\-ssh\-key\-file SSH_KEY_FILE] [\-\-zone ZONE] [\-h, \-\-help]
+.SH "DESCRIPTION"
+.sp
+\fBgcloud compute copy\-files\fR copies files between virtual machines and your local machine\&. Under the covers, \fBscp(1)\fR is used to facilitate the transfer\&. Hosts involved can only be Compute Engine Virtual machines and your local machine\&.
+.sp
+To denote a remote file, prefix the file name with the virtual machine instance\(cqs name (e\&.g\&., \(lqmy\-instance:/my\-file\(rq)\&. To denote a local file, do not add a prefix to the file name (e\&.g\&., \(lq/my\-file\(rq)\&. For example, to copy a number of remote files to a local directory, you can run:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud compute copy\-files \e
+    my\-instance\-1:~/file\-1 \e
+    my\-instance\-2:~/file\-2 \e
+    ~/my\-destination \e
+    \-\-zone us\-central2\-a
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+In the above example, \(lq/file\-1\(rq from \(lqmy\-instance\-1\(rq and \(lq/file\-2\(rq from \(lqmy\-instance\-2\(rq are copied to the local directory \(lq~/my\-destination\(rq\&.
+.sp
+Conversely, files from your local compute can be copied to the virtual machines:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud compute copy\-files \e
+    ~/my\-file \e
+    my\-instance:~/remote\-destination \e
+    \-\-zone us\-central2\-a
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Note that the zone of the instances were provided using \(lq\-\-zone\(rq\&. It\(cqs possible to specify the zone on a per\-instance basis by using partially\-qualified paths:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ gcloud compute copy\-files \e
+    us\-central2\-a/instances/my\-instance\-1:~/file\-1 \e
+    europe\-west1\-a/instnaces/my\-instance\-2:~/file\-2 \e
+    ~/my\-destination
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+When omitting \(lq\-\-zone\(rq, fight the urge to use full URIs for the instances (e\&.g\&., \(lqhttps://www\&.googleapis\&.com/compute/v1/projects/my\-project/zones/us\-central1\-a/instances/my\-instance\(rq) because positional arguments are split on the first colon\&.
+.sp
+If a local file contains a colon (\(lq:\(rq), you can specify it by either using an absolute path or a path that begins with \(lq\&./\(rq\&.
+.sp
+Copies involving a remote source and a remote destination will go through the local host\&. This is done because in most cases, a remote source will not know the remote destination\(cqs host key fingerprint, so a direct copy will likely fail\&. If performance is important (e\&.g\&., large files), SSH into the remote destination and issue the copy command from there\&.
+.SH "POSITIONAL ARGUMENTS"
+.PP
+\fI[[USER@]INSTANCE:]SOURCE [[[USER@]INSTANCE:]SOURCE \&...]\fR
+.RS 4
+Specifies a source file\&.
+.RE
+.PP
+\fI[[USER@]INSTANCE:]DEST\fR
+.RS 4
+Specifies a destination for the source files\&.
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-recursive\fR
+.RS 4
+Recursively copy entire directories\&.
+.RE
+.PP
+\fB\-\-ssh\-key\-file\fR \fISSH_KEY_FILE\fR
+.RS 4
+The path to the SSH key file\&. By deault, this is \(lq~/\&.ssh/google_compute_engine\(rq\&.
+.RE
+.PP
+\fB\-\-zone\fR \fIZONE\fR
+.RS 4
+The zone of the instances\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Print a summary help and exit\&.
+.RE

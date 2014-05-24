@@ -1,0 +1,53 @@
+'\" t
+.\"     Title: gcloud-compute-project-info-remove-metadata
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 05/20/2014
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "GCLOUD\-COMPUTE\-PROJECT\-INFO\-REMOVE\-METADATA" "1" "05/20/2014" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gcloud-compute-project-info-remove-metadata \- Remove project\-wide metadata entries
+.SH "SYNOPSIS"
+.sp
+\fBgcloud compute project\-info remove\-metadata\fR [\-\-all | \-\-keys KEY [KEY \&...]] [\-h, \-\-help]
+.SH "DESCRIPTION"
+.sp
+\fBgcloud compute project\-info remove\-metadata\fR can be used to remove project\-wide metadata entries\&.
+.SH "FLAGS"
+.PP
+\fB\-\-all\fR
+.RS 4
+If provided, all metadata entries are removed\&.
+.RE
+.PP
+\fB\-\-keys\fR \fIKEY [KEY \&...]\fR
+.RS 4
+The keys of the entries to remove\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Print a summary help and exit\&.
+.RE

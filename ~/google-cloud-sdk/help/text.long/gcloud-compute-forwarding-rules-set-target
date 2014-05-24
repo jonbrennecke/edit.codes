@@ -1,0 +1,30 @@
+NAME
+       gcloud-compute-forwarding-rules-set-target - Set the target of a
+       forwarding rule
+
+SYNOPSIS
+       gcloud compute forwarding-rules set-target NAME [--region REGION]
+       [--target-instance TARGET_INSTANCE | --target-pool TARGET_POOL] [-h,
+       --help]
+
+DESCRIPTION
+       gcloud compute forwarding-rules set-target is used to change the target
+       of a forwarding rule.
+
+POSITIONAL ARGUMENTS
+       NAME
+           The name of the forwarding rule.
+
+FLAGS
+       --region REGION
+           The region of the forwarding rule.
+
+       --target-instance TARGET_INSTANCE
+           The target instance that will receive the traffic.
+
+       --target-pool TARGET_POOL
+           The target pool that will receive the traffic.
+
+       --help
+           Print a summary help and exit.
+

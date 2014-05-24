@@ -1,0 +1,59 @@
+'\" t
+.\"     Title: gcloud-compute-target-pools-add-health-check
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 05/20/2014
+.\"    Manual: \ \&
+.\"    Source: \ \&
+.\"  Language: English
+.\"
+.TH "GCLOUD\-COMPUTE\-TARGET\-POOLS\-ADD\-HEALTH\-CHECK" "1" "05/20/2014" "\ \&" "\ \&"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gcloud-compute-target-pools-add-health-check \- Add an HTTP health check to a target pool
+.SH "SYNOPSIS"
+.sp
+\fBgcloud compute target\-pools add\-health\-check\fR NAME \-\-health\-check HEALTH_CHECK [\-\-region REGION] [\-h, \-\-help]
+.SH "DESCRIPTION"
+.sp
+\fBgcloud compute target\-pools add\-health\-check\fR is used to add an HTTP health check to a target pool\&. Health checks are used to determine the health status of instances in the target pool\&. For more information on health checks and load balancing, see https://developers\&.google\&.com/compute/docs/load\-balancing/\&.
+.SH "POSITIONAL ARGUMENTS"
+.PP
+\fINAME\fR
+.RS 4
+The name of the target pool to which to add the health check\&.
+.RE
+.SH "FLAGS"
+.PP
+\fB\-\-health\-check\fR \fIHEALTH_CHECK\fR
+.RS 4
+Specifies an HTTP health check object to add to the target pool\&.
+.RE
+.PP
+\fB\-\-region\fR \fIREGION\fR
+.RS 4
+The region of the target pool\&.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Print a summary help and exit\&.
+.RE
