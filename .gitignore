@@ -1,2 +1,3 @@
 node_modules/
-~/
+public/scripts/bower_components/
+public/css/.sass_cache/
