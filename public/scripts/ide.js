@@ -51,7 +51,7 @@
 			// POST the data to the /run api endpoint
 			$.ajax({	
 				type : "post",
-				url : "http://localhost:3000/api/run",
+				url : "http://localhost:3001/api/run",
 				data : { doc : codemirror.doc.getValue() },
 				dataType : "json",
 				complete : function ( response ) {

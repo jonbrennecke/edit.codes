@@ -1,9 +1,12 @@
-var mongoose = require('mongoose');
+/**
+ * 
+ * connect to MongoDB on MongoLab
+ *
+ */
 
-// connect to MongoDB on MongoLab
-// ============================================================================================
 
-var mongoUrl = "dbh55.mongolab.com:27557/api";
+var mongoose = require('mongoose'),
+	mongoUrl = "dbh55.mongolab.com:27557/api";
 
 
 // mongodb error handler
@@ -32,4 +35,4 @@ mongoose.connection.on( "open", function ( res ) {
 
 
 // try authenticating with the username and password given as arguments
-mongoose.connect("mongodb://" + process.argv[2] + ":" + process.argv[3] + "@" + mongoUrl );
+mongoose.connect("mongodb://" + process.env.npm_config_mongodb_username + ":" + process.env.npm_config_mongodb_password + "@" + mongoUrl );

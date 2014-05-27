@@ -17,37 +17,39 @@
  * This script should be run with username/password parameters for the MongoLab database
  * supplied as command-line arguments, i.e. :
  *
- * $ node server.js user pass
+ * $ npm --mongodb_username=username --mongodb_password=password start
  * 
+ * An additional 'port' parameter can be provided, instructing the server on which port to 
+ * listen. The port should be provided like "--port=8080"
  *
- * TODO 
- * 	- add chat app (websockets?)
- *	- collaborative coding
- *  - 
  *
  */
 
 
+/**
+ * first check the command line arguments for the MongoLab username/password
+ * these should be passed to npm as:
+ *
+ * npm --mongodb_username=username --mongodb_password=password start
+ */
 
-// first check the command line arguments for the MongoLab username/password
-// ============================================================================================
-
-if ( ! ( process.argv[2] && process.argv[3] ) ) {
-	
-	console.error( "ERROR >>> requires MongoDB "  + 
-		( process.argv[2] ? ( process.argv[3] ? "" : "password" ) : "username and password" ) +
-		" as CLI argument(s)" );
+if ( ! ( process.env.npm_config_mongodb_username && process.env.npm_config_mongodb_password ) ) {
+	console.error( 
+		"ERROR >>> requires MongoDB "  + 
+		( process.env.npm_config_mongodb_username ? ( process.env.npm_config_mongodb_password ? 
+		"" : "password" ) : "username and password" ) + " as CLI argument(s)" 
+	);
 
 	process.exit();
-
 }
-
 
 
 // first let's define some constants and requires
 // ============================================================================================
 
-// define what port the server will run on
+// 'PORT' is the default port
+// if no "--port=XXXX" parameter is provided to npm at start, the server will default to using 'PORT'
+
 var PORT = 3000,
 
 	// get expressjs and a few other things
@@ -313,33 +315,47 @@ router.route('/run')
 		
 		var script = new Script();
 		script.stdin = req.body.doc;
+		
+		
+		python( script.stdin, function ( data ) {
 
-
-		python.stdout.on( 'data', function ( data ) {
-
-			script.stdout = data.toString();
-			res.send( { "script" : script });
+			console.log( data )
 
 		});
 
-		// python.stderr.on( 'data', function ( data ) {
 
-		// 	script.stderr = data.toString();
+		// python.stdout.on( 'data', function ( data ) {
+
+		// 	script.stdout = data.toString();
 		// 	res.send( { "script" : script });
 
 		// });
 
+		// // python.stderr.on( 'data', function ( data ) {
 
-		// probably should return the whole script model
-		python.process.stdin.write( script.stdin + '\n' );
+		// // 	script.stderr = data.toString();
+		// // 	res.send( { "script" : script });
+
+		// // });
+
+
+		// // probably should return the whole script model
+		// python.process.stdin.write( script.stdin + '\n' );
 
 		
 	})
 
 
 
-// finally, start the server
-// ============================================================================================
-app.listen( PORT );
+/**
+ * 
+ * finally, start the server
+ * if no "--port=XXXX" parameter is provided to npm at start, the server will default to using 'PORT'
+ *
+ */
+app.listen( process.env.npm_config_port || PORT );
 
-console.log(">>> magic happening on port " + PORT );
+console.log(">>> magic happening on port " + ( process.env.npm_config_port || PORT ) );
+
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "edit.codes",
+  "main": "index.js",
+  "version": "0.0.1",
+  "authors": [
+    "Jon Brennecke <jpbrennecke@gmail.com>"
+  ],
+  "description": "the website edit.codes",
+  "license": "MIT",
+  "homepage": "http://edit.codes",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "codemirror": "~4.2.0"
+  }
+}

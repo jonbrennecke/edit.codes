@@ -2,14 +2,16 @@
 	"name" : "edit.codes",
 	"version" : "0.0.1",
 	"description" : "the website edit.codes",
-	"main" : "server.js",
+	"main" : "web-server.js",
 	"man" : "README.md",
 	"repository" : {
 		"type" : "git",
-		"url" : "https://github.com/jonbrennecke/edit.codes",
+		"url" : "https://github.com/jonbrennecke/edit.codes"
 	},
 	"config" : {
-		"port" : "8080"
+		"port" : "8080",
+		"mongodb_username" : "",
+		"mongodb_password" : ""
 	},
 	"dependencies" : {
 		"bcrypt" : "*",
@@ -23,6 +25,6 @@
 		"through" : "*"
 	},
 	"scripts" : {
-
+		"start" : "node web-server.js"
 	}
 }
