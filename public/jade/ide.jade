@@ -29,6 +29,25 @@ html(lang="en")
 					<a target="_blank" href="http://opensource.org/licenses/mit-license.html">MIT License</a> &bull; 
 					<a target="_blank" href="https://github.com/jonbrennecke/edit.codes">Fork the repository on Github</a>
 				p Copyright © 2014 Jon Brennecke.
+			div.header-actions
+				ul.user-menu
+					li.user
+
+						//- gravatar image
+						div#profile-img-wrap
+							a.profile-img.gravatar
+								a.fa.fa-spin.fa-gear 
+
+						//- login in/out dropdown menu	
+						div#profile-drop-down
+							div.top-circle-tab
+								div.corner.after
+
+							div.icons
+								//- a.fa.fa-user( href="/user/signup" )
+								//- 	span Login/Sign up
+								//- a.fa.fa-sign-out( href="/user/signout" )
+								//- 	span Sign out
 
 
 		div.layout.left-nav-bar-wrap
@@ -49,18 +68,6 @@ html(lang="en")
 			//- top navigation bar
 			nav.top-nav-bar
 				header.flat
-					div.header-actions
-						ul.user-menu
-							li.user
-
-								//- gravatar image
-								div.profile-img-wrap
-									div.profile-img.gravatar
-
-								h1.username #{user.name}
-
-							li.signin
-								a.fa.fa-sort-down
 
 				section.menu
 

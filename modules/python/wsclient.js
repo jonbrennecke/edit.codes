@@ -16,6 +16,7 @@ function WSClient( host, port ) {
 	this.socket.on( 'connect', this.onconnect.bind( this ) );
 	this.socket.on( 'message', this.onmessage.bind( this ) );
 	this.socket.on( 'error', this.onerror.bind( this ) );
+	this.socket.on( 'connect_failed', this.onerror.bind( this ) )
 	this.socket.on( 'close', this.onclose.bind( this ) );
 
 };

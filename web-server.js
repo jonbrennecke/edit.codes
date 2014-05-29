@@ -17,7 +17,7 @@
  * This script should be run with username/password parameters for the MongoLab database
  * supplied as command-line arguments, i.e. :
  *
- * $ npm --mongodb_username=username --mongodb_password=password start
+ * $ npm --mongodb_username=username --mongodb_password=password --secret=secret start
  * 
  * An additional 'port' parameter can be provided, instructing the server on which port to 
  * listen. The port should be provided like "--port=8080"
@@ -54,23 +54,18 @@ var PORT = 3000,
 
 	// get expressjs and a few other things
 	express = require('express'),
+	session = require('express-session'),
+	cookieParser = require('cookie-parser'),
 	bodyParser = require('body-parser'),
 	router = express.Router(),
 	app = express(),
-
-	// filesystem libs
-	sys = require('sys'),
-	fs = require('fs'),
-	childProcess = require('child_process'),
-	exec = childProcess.exec,
-	spawn = childProcess.spawn,
 
 	// passport for authentication
 	passport = require('passport'),
 	LocalStrategy = require('passport-local').Strategy,
 
-	// crypto for md5 hashing
-	crypto = require('crypto'),
+	// to make passport work with MongoDb
+	MongoStore = require('connect-mongo')(session),
 	
 	// API Schemas
 	Script = require( __dirname + '/api/models/scripts'),
@@ -83,40 +78,34 @@ var PORT = 3000,
 	db = require( __dirname + "/db.js" );
 
 
-// Express app stuffs
-// this part is kinda ugly and needs some cleaning up (TODO)
-// ============================================================================================
 
+/**
+ *
+ *  Configure Express
+ *
+ */
 
-// configure express
 app.set('views', __dirname + '/public/jade/' );
 app.set('view engine', 'jade');
 app.engine( 'jade', require('jade').__express );
 app.use( bodyParser() );
+app.use( cookieParser() );
 
 // TODO replace serving static files with NginX
 app.use( express.static( __dirname + '/public/') );
 
 app.use( passport.initialize() );
+app.use( session({
+	secret : process.env.npm_config_secret,
+	cookie : {
+		maxAge : 3600000
+	},
+	store : new MongoStore({
+		mongoose_connection : db
+	})
+}));
 app.use( passport.session() );
 app.use( '/api', router );
-
-
-// serialize the user data
-// TODO put this in a module and load asyncly
-
-// generate a link to the user's gravatar
-var gravatar = "http://www.gravatar.com/avatar/";
-gravatar += crypto.createHash('md5').update( "jpbrennecke@gmail.com".toLowerCase().trim() ).digest("hex");
-gravatar += "?s=256";
-
-var data = {
-	user : {
-		name : "Jon",
-		email : "jpbrennecke@gmai.com",
-		gravatar : gravatar
-	}
-}
 
 
 /**
@@ -134,25 +123,6 @@ passport.deserializeUser( function(id, done) {
 		done(err, user);
 	});
 });
-
-
-
-// render & serve 'public/haml/signup.haml' as the root file for now
-// we'll be changing this later (TODO)
-app.get('/', function ( req, res ){
-
-	res.render("index", data );
-
-});
-
-// render & serve 'public/haml/signup.haml' as the root file for now
-// we'll be changing this later (TODO)
-app.get('/ide', function ( req, res ){
-
-	res.render("ide", data );
-
-});
-
 
 
 // set up passport for local authentication
@@ -176,174 +146,22 @@ passport.use( new LocalStrategy(
 	}
 ));
 
-// gets the IDE page
-app.get('/ide', function ( req, res ){
 
-	// render the jade and return the html
-	res.render( 'ide' );
+/**
+ *
+ * The API/Pages schemas are seperated into several files
+ * require and run these
+ *
+ */
 
-});
-
-
-// gets the login page
-app.get('/login', function ( req, res ){
-
-	// render the jade and return the html
-	res.render( 'login' );
-
-});
+// api
+var api = require( __dirname + '/api/api' );
+api.use( app, router );
 
 
-
-// POST to login
-app.post( '/login',
-	
-	passport.authenticate('local'),
-
-	function(req, res) { {
-
-		// If this function gets called, authentication was successful.
-		// `req.user` contains the authenticated user.
-		res.redirect('/users/' + req.user.name);
-	
-	}
-});
-
-
-
-// authenticate new user using passport
-app.post('/register', function ( req, res ) {
-
-	// attach POST to user schema
-	var user = new User({ 
-
-		email: req.body.email, 
-		password: req.body.password, 
-		name: req.body.username 
-
-	});
-	
-	// save in Mongo
-	user.save( function ( err ) {
-		if( err ) {
-			console.warn(err);
-		} else {
-
-			req.login( user, function(err) {
-				if (err) {
-					console.log(err);
-				}
-				return res.redirect('/');
-			});
-
-		}
-	});
-
-});
-
-
-// 404 page
-// app.use(function(req, res, next){
-//   res.status(404);
-
-//   // respond with html page
-//   if (req.accepts('html')) {
-//     res.render('404', { url: req.url });
-//     return;
-//   }
-
-//   // respond with json
-//   if (req.accepts('json')) {
-//     res.send({ error: 'Not found' });
-//     return;
-//   }
-
-//   // default to plain-text. send()
-//   res.type('txt').send('Not found');
-// });
-
-
-
-
-// api endpoints
-// ============================================================================================
-// 
-
-// Scripts API
-// ============================================================================================
-// POST api/scripts
-// GET api/scripts
-//
-
-// router.route('/scripts')
-
-// 	// add a script (accessed at POST http://localhost:3000/api/scripts)
-// 	.post( function(req, res) {
-		
-// 		var script = new Script(); 	// create a new instance of the Script model
-// 		script.name = req.body.name;  // set the Script name (comes from the request)
-
-// 		// save the script and check for errors
-// 		script.save( function(err) {
-// 			if (err)
-// 				res.send(err);
-
-// 			res.json({ message: 'Script created!' });
-// 		});
-		
-// 	})
-
-// 	.get( function(req,res){
-// 		Script.find(function(err, scripts) {
-// 			if (err)
-// 				res.send(err);
-
-// 			res.json(scripts);
-// 		});
-// 	})
-
-
-// Scripts API
-// ============================================================================================
-// POST api/run
-//
-
-
-router.route('/run')
-
-	.post( function( req, res ) {
-		
-		var script = new Script();
-		script.stdin = req.body.doc;
-		
-		
-		python( script.stdin, function ( data ) {
-
-			console.log( data )
-
-		});
-
-
-		// python.stdout.on( 'data', function ( data ) {
-
-		// 	script.stdout = data.toString();
-		// 	res.send( { "script" : script });
-
-		// });
-
-		// // python.stderr.on( 'data', function ( data ) {
-
-		// // 	script.stderr = data.toString();
-		// // 	res.send( { "script" : script });
-
-		// // });
-
-
-		// // probably should return the whole script model
-		// python.process.stdin.write( script.stdin + '\n' );
-
-		
-	})
+// pages
+var pages = require( __dirname + '/pages/pages' );
+pages.use( app, passport );
 
 
 
@@ -353,6 +171,8 @@ router.route('/run')
  * if no "--port=XXXX" parameter is provided to npm at start, the server will default to using 'PORT'
  *
  */
+
+
 app.listen( process.env.npm_config_port || PORT );
 
 console.log(">>> magic happening on port " + ( process.env.npm_config_port || PORT ) );

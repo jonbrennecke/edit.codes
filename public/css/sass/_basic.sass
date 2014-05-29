@@ -5,7 +5,6 @@
 @import "const"
 @import "functions"
 @import "colors"
-@import "credits"
 
 html
 	height: 100%
@@ -16,12 +15,13 @@ body
 	position: relative
 	height: 100%
 
-.layout
-	&.dropdown
-		&.credits
-			top: 0px
-		&.left-nav-bar-wrap, &.page-wrap
-			top: 100px
-
 .ubuntu
 	font-family: "Ubuntu", Helvetica, Arial, sans-serif
+
+.ascii-art
+	color: $monokai-yellow
+	white-space: pre-wrap
+	font-family: monospace
+	font-size: 18pt
+	text-align: center
+	text-shadow: 2px 2px 0px darken($monokai-yellow,40%)

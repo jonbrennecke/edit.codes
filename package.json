@@ -22,7 +22,9 @@
 		"mongoose" : "*",
 		"passport" : "*",
 		"passport-local" : "*",
-		"through" : "*"
+		"through" : "*",
+		"express-session" : "*",
+		"connect-mongo" : "*"
 	},
 	"scripts" : {
 		"start" : "node web-server.js"

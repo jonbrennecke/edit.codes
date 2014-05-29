@@ -1,0 +1,89 @@
+@import "basic"
+
+.signin-with-social
+	color: $monokai-white
+	
+	a
+		visibility: hidden
+		// padding: 1em
+
+.auth-form-wrap
+	$width: 25em
+
+	@extend .ubuntu
+	position: relative
+	top: 25%
+	font-size: 12pt
+	width: $width
+	margin: 0 auto
+	background: $monokai-bg
+	border-bottom-left-radius: 15px
+	border-bottom-right-radius: 15px
+	padding: 3em 2em 1em 2em
+	box-sizing: border-box
+
+	.top-colors
+		position: absolute
+		width: 100%
+		height: 0.5em
+		left: 0
+		top: 0
+
+		$map: ( $monokai-purple, $monokai-red, $monokai-orange, $monokai-yellow, $monokai-green, $monokai-blue )
+		$colors: ( purple, red, orange, yellow, green, blue )
+
+		div
+			position: relative
+			height: 0.5em
+			width: $width / length($map)
+			float: left
+
+		@for $i from 1 through length($map)
+			div.#{ nth($colors,$i) }
+				background: nth($map,$i)
+
+	div.redirect-prompt
+
+		// position: relative
+		font-size: 10pt
+		color: lighten($monokai-bg,35%)
+		margin-bottom: 2em
+		font-weight: lighter
+
+		a
+			color: inherit
+
+	input
+		position: relative
+		display: block
+		font-size: 10pt
+		width: 100%
+		float: left
+		padding: 1em
+		margin-bottom: 0.5em
+		box-sizing: border-box
+		border-radius: 5px
+		border: none
+		-webkit-appearance: none
+		-moz-appearance: none
+		-ms-appearance: none
+		outline: none
+
+		&[type="submit"]
+			background: darken($monokai-green,10%)
+			color: $monokai-white
+			cursor: pointer
+
+			&:active
+				background: darken($monokai-green,20%)
+
+
+.title-sequence
+	position: relative
+	top: 15%
+
+	p
+		@extend .ascii-art
+		// color: $mono
+
+

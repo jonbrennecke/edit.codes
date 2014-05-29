@@ -9,7 +9,7 @@
 	width: 100%
 	text-align: center
 	margin-bottom: -100px
-	z-index: 5
+	z-index: 3
 
 	a
 		text-decoration: none
@@ -53,13 +53,97 @@
 #title-tab
 	position: absolute
 	cursor: pointer
-	right: 20%
+	right: $height * 2 + 10px
 	@extend .ubuntu
 	background: darken($theme-bg, 10%)
 	bottom: -50px
-	z-index: 10
 	padding: 0.5em 1em
 	font-size: 25px
 
 	@include tab( 50px, darken($theme-bg, 10%), $theme-bg, true )
 
+
+.header-actions
+	position: absolute
+	bottom: -$height + 5px
+	right: 0
+	height: $height
+	font-size: $height * 0.25
+	padding: 0.5em
+	box-sizing: border-box
+
+	li
+		position: relative
+		float: left
+
+	a.fa-sort-down
+		font-size: 15px
+		padding-top: 1.25em
+
+	.user
+		position: absolute
+		z-index: 15
+		right: 10px
+
+		#profile-img-wrap
+			position: relative
+			float: left
+			height: $height * 0.75
+			width: $height * 0.75
+			padding: 2px
+			box-sizing: border-box
+			border-radius: 50%
+			font-size: $height * 0.75
+
+
+			.profile-img
+				position: absolute
+				z-index: 11
+				left: 0
+				top: 0
+				height: 100%
+				width: 100%
+				background-size: 100% auto
+				border-radius: inherit
+				cursor: pointer
+
+				&.hover:not( .dropped )
+					background: none
+
+				&.dropped
+					height: 80%
+					width: 80%
+					margin: 5% 10% 10% 10%
+
+		#profile-drop-down
+			$drop-down-bg: darken($monokai-white, 15%)
+			
+			position: absolute
+			display: none
+			background: $drop-down-bg
+			height: $height * 2
+			width: $height * 4
+			right: 0
+			top: 100%
+			border-radius: 15px
+			border-top-right-radius: 0
+			z-index: 10
+
+			.top-circle-tab
+				position: absolute
+				bottom: 100%
+				right: 0
+				@include tab( $height*0.75, $drop-down-bg, $theme-bg )
+				background: $drop-down-bg
+				width: $height * 0.75
+
+			.icons
+				a
+					color: $monokai-bg
+					font-size: $height * 0.5
+					margin: 0.5em 0 0 0.75em
+					cursor: pointer
+					text-decoration: none
+
+				span
+					display: none

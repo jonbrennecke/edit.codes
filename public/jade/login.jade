@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+	head
+		link( rel="stylesheet" media="screen, projection" type="text/css" href="../css/stylesheets/login.css" )
+		//- script( type="text/javascript" data-main="../scripts/login" src="../scripts/require.js" )
+
+		title edit.codes
+
+	body.login-page
+		header.title-sequence
+			p.title-ascii 
+				┌─┐┌┬┐┬┌┬┐ ┌─┐┌─┐┌┬┐┌─┐┌─┐
+				├┤  │││ │  │  │ │ ││├┤ └─┐
+				└─┘─┴┘┴ ┴  └─┘└─┘─┴┘└─┘└─┘
+		section.auth-form-wrap
+			div.top-colors
+				div.red
+				div.orange
+				div.yellow
+				div.green
+				div.blue
+				div.purple
+
+			form.auth-form( method="post" )
+				input( type="text" name="username" placeholder="Username/Email" ) 
+				input( type="password" name="password" placeholder="Password" )
+
+				div.redirect-prompt <a href="/signup">Sign up</a> or <a href="/">reset your password </a>
+
+				input( type="submit" value="Sign In" ) 
+
+				div.signin-with-social
+					a.fa.fa-github
+					a.fa.fa-facebook
+					a.fa.fa-twitter
+					a.fa.fa-google
+
+				//- input( type="text" placeholder="Pick a username" ) 
+				//- input( type="text" placeholder="Your email" )
+				//- input( type="password" placeholder="Create a password" )  
+				//- input( type="button" value="Sign Up for Free" ) 
+

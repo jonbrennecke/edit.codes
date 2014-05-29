@@ -2597,12 +2597,12 @@ body {
 }
 
 /* line 18, ../sass/_basic.sass */
-.ubuntu, .credits, #title-tab, section.menu li {
+.ubuntu, .auth-form-wrap {
   font-family: "Ubuntu", Helvetica, Arial, sans-serif;
 }
 
 /* line 21, ../sass/_basic.sass */
-.ascii-art {
+.ascii-art, .title-sequence p {
   color: #e6db74;
   white-space: pre-wrap;
   font-family: monospace;
@@ -2611,528 +2611,108 @@ body {
   text-shadow: 2px 2px 0px #786f16;
 }
 
-/* line 1, ../sass/_credits.sass */
-.credits {
-  position: relative;
-  top: -95px;
-  height: 100px;
-  background: #6d98a3;
-  font-size: 10.5pt;
-  color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  text-align: center;
-  margin-bottom: -100px;
-  z-index: 3;
-}
-/* line 14, ../sass/_credits.sass */
-.credits a {
-  text-decoration: none;
-}
-/* line 17, ../sass/_credits.sass */
-.credits p {
-  padding: 0.25em;
-}
-/* line 20, ../sass/_credits.sass */
-.credits .half {
-  box-sizing: border-box;
-  position: relative;
-  float: left;
-  width: 50%;
-  height: 100%;
-}
-/* line 27, ../sass/_credits.sass */
-.credits .cite {
-  text-align: right;
-  padding-right: 50px;
-  padding-top: 15px;
-}
-/* line 32, ../sass/_credits.sass */
-.credits .cite a {
-  color: rgba(0, 0, 0, 0.7);
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.7);
-}
-/* line 37, ../sass/_credits.sass */
-.credits .links .icon {
-  position: relative;
-  margin: 25px 0px 25px 50px;
-  float: left;
-  font-size: 50px;
-  color: black;
-  height: 1em;
-  display: block;
-  -webkit-filter: grayscale(1) contrast(0) brightness(0);
-  opacity: 0.5;
-  pointer: cursor;
-}
-/* line 49, ../sass/_credits.sass */
-.credits .links .icon.ilos {
-  width: 3em;
-}
-
-/* line 53, ../sass/_credits.sass */
-#title-tab {
-  position: absolute;
-  cursor: pointer;
-  right: 160px;
-  background: #6d98a3;
-  bottom: -50px;
-  padding: 0.5em 1em;
-  font-size: 25px;
-  height: 50px;
-  text-align: center;
-  box-sizing: border-box;
-  border-bottom-right-radius: 33.33333px;
-  border-bottom-left-radius: 33.33333px;
-}
-/* line 33, ../sass/_functions.sass */
-#title-tab div.corner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-/* line 40, ../sass/_functions.sass */
-#title-tab div.corner::after {
-  content: "";
-  position: absolute;
-  background: #8caeb7;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-}
-/* line 48, ../sass/_functions.sass */
-#title-tab div.corner::before {
-  content: "";
-  position: absolute;
-  height: 25px;
-  width: 25px;
-  background: #6d98a3;
-}
-/* line 56, ../sass/_functions.sass */
-#title-tab div.corner.before::before {
-  left: 100%;
-  bottom: 25px;
-}
-/* line 60, ../sass/_functions.sass */
-#title-tab div.corner.before::after {
-  left: 100%;
-}
-/* line 64, ../sass/_functions.sass */
-#title-tab div.corner.after::before {
-  right: 100%;
-  bottom: 25px;
-}
-/* line 68, ../sass/_functions.sass */
-#title-tab div.corner.after::after {
-  right: 100%;
-}
-
-/* line 66, ../sass/_credits.sass */
-.header-actions {
-  position: absolute;
-  bottom: -70px;
-  right: 0;
-  height: 75px;
-  font-size: 18.75px;
-  padding: 0.5em;
-  box-sizing: border-box;
-}
-/* line 75, ../sass/_credits.sass */
-.header-actions li {
-  position: relative;
-  float: left;
-}
-/* line 79, ../sass/_credits.sass */
-.header-actions a.fa-sort-down {
-  font-size: 15px;
-  padding-top: 1.25em;
-}
-/* line 83, ../sass/_credits.sass */
-.header-actions .user {
-  position: absolute;
-  z-index: 15;
-  right: 10px;
-}
-/* line 88, ../sass/_credits.sass */
-.header-actions .user #profile-img-wrap {
-  position: relative;
-  float: left;
-  height: 56.25px;
-  width: 56.25px;
-  padding: 2px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  font-size: 56.25px;
-}
-/* line 99, ../sass/_credits.sass */
-.header-actions .user #profile-img-wrap .profile-img {
-  position: absolute;
-  z-index: 11;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-size: 100% auto;
-  border-radius: inherit;
-  cursor: pointer;
-}
-/* line 110, ../sass/_credits.sass */
-.header-actions .user #profile-img-wrap .profile-img.hover:not(.dropped) {
-  background: none;
-}
-/* line 113, ../sass/_credits.sass */
-.header-actions .user #profile-img-wrap .profile-img.dropped {
-  height: 80%;
-  width: 80%;
-  margin: 5% 10% 10% 10%;
-}
-/* line 118, ../sass/_credits.sass */
-.header-actions .user #profile-drop-down {
-  position: absolute;
-  display: none;
-  background: #ddddc0;
-  height: 150px;
-  width: 300px;
-  right: 0;
-  top: 100%;
-  border-radius: 15px;
-  border-top-right-radius: 0;
-  z-index: 10;
-}
-/* line 132, ../sass/_credits.sass */
-.header-actions .user #profile-drop-down .top-circle-tab {
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  height: 57.25px;
-  text-align: center;
-  box-sizing: border-box;
-  border-top-right-radius: 38.16667px;
-  border-top-left-radius: 38.16667px;
-  background: #ddddc0;
-  width: 56.25px;
-}
-/* line 33, ../sass/_functions.sass */
-.header-actions .user #profile-drop-down .top-circle-tab div.corner {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-/* line 40, ../sass/_functions.sass */
-.header-actions .user #profile-drop-down .top-circle-tab div.corner::after {
-  content: "";
-  position: absolute;
-  background: #8caeb7;
-  height: 57.25px;
-  width: 57.25px;
-  border-radius: 50%;
-}
-/* line 48, ../sass/_functions.sass */
-.header-actions .user #profile-drop-down .top-circle-tab div.corner::before {
-  content: "";
-  position: absolute;
-  height: 28.625px;
-  width: 28.625px;
-  background: #ddddc0;
-}
-/* line 56, ../sass/_functions.sass */
-.header-actions .user #profile-drop-down .top-circle-tab div.corner.before::before {
-  left: 100%;
-  bottom: 0;
-}
-/* line 60, ../sass/_functions.sass */
-.header-actions .user #profile-drop-down .top-circle-tab div.corner.before::after {
-  left: 100%;
-}
-/* line 64, ../sass/_functions.sass */
-.header-actions .user #profile-drop-down .top-circle-tab div.corner.after::before {
-  right: 100%;
-  bottom: 0;
-}
-/* line 68, ../sass/_functions.sass */
-.header-actions .user #profile-drop-down .top-circle-tab div.corner.after::after {
-  right: 100%;
-}
-/* line 141, ../sass/_credits.sass */
-.header-actions .user #profile-drop-down .icons a {
-  color: #272822;
-  font-size: 37.5px;
-  margin: 0.5em 0 0 0.75em;
-  cursor: pointer;
-  text-decoration: none;
-}
-/* line 148, ../sass/_credits.sass */
-.header-actions .user #profile-drop-down .icons span {
-  display: none;
-}
-
-/* line 1, ../sass/_navigation.sass */
-.left-nav-bar-wrap {
-  position: relative;
-  height: 100%;
-  width: 75px;
-  float: left;
-}
-
-/* line 7, ../sass/_navigation.sass */
-.page-wrap {
-  position: relative;
-  float: left;
-  height: 100%;
-  width: calc(100% - 75px);
-  height: 100%;
-  box-sizing: border-box;
-  top: 0;
-}
-
-/* line 16, ../sass/_navigation.sass */
-nav {
-  position: relative;
-  width: 100%;
-  font-size: 37.5px;
-  box-sizing: border-box;
-  z-index: 2;
-}
-/* line 23, ../sass/_navigation.sass */
-nav.bottom-nav-bar {
-  float: left;
-  height: 37.5px;
-  width: 100%;
-  margin-top: 5px;
-}
-/* line 30, ../sass/_navigation.sass */
-nav.bottom-nav-bar ul {
-  list-style-type: none;
-  margin-right: 5px;
-}
-/* line 34, ../sass/_navigation.sass */
-nav.bottom-nav-bar ul li {
-  display: inline-block;
-  height: 37.5px;
-  float: right;
-}
-/* line 39, ../sass/_navigation.sass */
-nav.bottom-nav-bar ul a {
-  position: relative;
-  display: block;
-  float: right;
-  width: 37.5px;
-  height: 100%;
-  border-radius: 50%;
-  font-size: 18.75px;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
+/* line 3, ../sass/login.sass */
+.signin-with-social {
   color: #f8f8f2;
-  margin-right: 5px;
 }
-/* line 53, ../sass/_navigation.sass */
-nav.bottom-nav-bar ul .fa-facebook {
-  background: #3b5998;
-}
-/* line 55, ../sass/_navigation.sass */
-nav.bottom-nav-bar ul .fa-twitter {
-  background: #00acee;
-}
-/* line 57, ../sass/_navigation.sass */
-nav.bottom-nav-bar ul .fa-google-plus {
-  background: #d34836;
-}
-/* line 60, ../sass/_navigation.sass */
-nav.left-nav-bar {
-  z-index: 5;
-  height: 100%;
-}
-/* line 64, ../sass/_navigation.sass */
-nav.left-nav-bar .icon-wrap {
-  height: 75px;
-  width: 100%;
-  box-sizing: border-box;
-}
-/* line 70, ../sass/_navigation.sass */
-nav.left-nav-bar ul li {
-  position: relative;
-  display: block;
-  margin: 5px auto;
-  left: 2.55px;
-  font-size: 30px;
-  text-align: center;
-  padding: 0.5em;
-  height: 60px;
-  width: 60px;
-  box-sizing: border-box;
-  color: #e6e6d1;
-  transition: background 0.1s;
-  border-radius: 50%;
-  background: #272822;
-  cursor: pointer;
-}
-/* line 87, ../sass/_navigation.sass */
-nav.left-nav-bar ul li:hover {
-  background: #e7064f;
-}
-/* line 91, ../sass/_navigation.sass */
-nav.top-nav-bar {
-  position: relative;
-  width: 100%;
-  height: 75px;
-  background: #8caeb7;
+/* line 6, ../sass/login.sass */
+.signin-with-social a {
+  visibility: hidden;
 }
 
-/* line 1, ../sass/_ide.scss */
-section.menu {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: 30px;
-  height: 60px;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 15, ../sass/_ide.scss */
-section.menu .tab-nav-buttons {
+/* line 10, ../sass/login.sass */
+.auth-form-wrap {
   position: relative;
-  float: left;
-  font-size: 15px;
-  margin-right: 1em;
-  margin-top: 30px;
-  color: #272822;
-}
-/* line 23, ../sass/_ide.scss */
-section.menu .tab-nav-buttons span {
-  padding: 0.5em;
-}
-/* line 26, ../sass/_ide.scss */
-section.menu li {
-  display: inline-block;
-}
-/* line 33, ../sass/_ide.scss */
-section.menu .tabs li {
-  height: 30px;
-  text-align: center;
+  top: 25%;
+  font-size: 12pt;
+  width: 25em;
+  margin: 0 auto;
+  background: #272822;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 3em 2em 1em 2em;
   box-sizing: border-box;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  position: relative;
-  margin: 30px 1em 0 1em;
-  padding: 0.5em 1.5em;
-  font-size: 15px;
-  height: 30px;
-  text-align: center;
-  box-sizing: border-box;
-  color: #e6e6d1;
-  cursor: pointer;
-  background: #424439;
 }
-/* line 33, ../sass/_functions.sass */
-section.menu .tabs li div.corner {
+/* line 25, ../sass/login.sass */
+.auth-form-wrap .top-colors {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 0.5em;
   left: 0;
   top: 0;
 }
-/* line 40, ../sass/_functions.sass */
-section.menu .tabs li div.corner::after {
-  content: "";
-  position: absolute;
-  background: #8caeb7;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-}
-/* line 48, ../sass/_functions.sass */
-section.menu .tabs li div.corner::before {
-  content: "";
-  position: absolute;
-  height: 15px;
-  width: 15px;
-  background: #424439;
-}
-/* line 56, ../sass/_functions.sass */
-section.menu .tabs li div.corner.before::before {
-  left: 100%;
-  bottom: 0;
-}
-/* line 60, ../sass/_functions.sass */
-section.menu .tabs li div.corner.before::after {
-  left: 100%;
-}
-/* line 64, ../sass/_functions.sass */
-section.menu .tabs li div.corner.after::before {
-  right: 100%;
-  bottom: 0;
-}
-/* line 68, ../sass/_functions.sass */
-section.menu .tabs li div.corner.after::after {
-  right: 100%;
-}
-/* line 55, ../sass/_ide.scss */
-section.menu .tabs li.active {
-  background: #272822;
-}
-/* line 58, ../sass/_ide.scss */
-section.menu .tabs li.active .before::before, section.menu .tabs li.active .after::before {
-  background: #272822;
-}
-
-/* line 64, ../sass/_ide.scss */
-section.ide {
+/* line 35, ../sass/login.sass */
+.auth-form-wrap .top-colors div {
   position: relative;
+  height: 0.5em;
+  width: 4.16667em;
+  float: left;
+}
+/* line 42, ../sass/login.sass */
+.auth-form-wrap .top-colors div.purple {
+  background: #ae81ff;
+}
+/* line 42, ../sass/login.sass */
+.auth-form-wrap .top-colors div.red {
+  background: #f9276b;
+}
+/* line 42, ../sass/login.sass */
+.auth-form-wrap .top-colors div.orange {
+  background: #fd8c20;
+}
+/* line 42, ../sass/login.sass */
+.auth-form-wrap .top-colors div.yellow {
+  background: #e6db74;
+}
+/* line 42, ../sass/login.sass */
+.auth-form-wrap .top-colors div.green {
+  background: #a6e22d;
+}
+/* line 42, ../sass/login.sass */
+.auth-form-wrap .top-colors div.blue {
+  background: #54ceef;
+}
+/* line 45, ../sass/login.sass */
+.auth-form-wrap div.redirect-prompt {
+  font-size: 10pt;
+  color: #858874;
+  margin-bottom: 2em;
+  font-weight: lighter;
+}
+/* line 53, ../sass/login.sass */
+.auth-form-wrap div.redirect-prompt a {
+  color: inherit;
+}
+/* line 56, ../sass/login.sass */
+.auth-form-wrap input {
+  position: relative;
+  display: block;
+  font-size: 10pt;
   width: 100%;
-  height: calc(100% - (75px * 1.5 + 10px) );
-  padding: 0 5px;
-}
-/* line 70, ../sass/_ide.scss */
-section.ide .actions {
-  position: absolute;
-  width: 1em;
-  font-size: 20px;
-  z-index: 1;
-  right: 25px;
-  color: #d4d4b0;
-}
-/* line 78, ../sass/_ide.scss */
-section.ide .actions .fa {
+  float: left;
+  padding: 1em;
   margin-bottom: 0.5em;
-}
-/* line 81, ../sass/_ide.scss */
-section.ide .code {
-  position: relative;
-  width: calc(50% - 7.5px);
-  height: 100%;
-  float: left;
-  background: #272822;
   box-sizing: border-box;
-  padding: 25px;
-  font-size: 11pt;
-  border-radius: 15px;
+  border-radius: 5px;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  outline: none;
 }
-/* line 93, ../sass/_ide.scss */
-section.ide #code-mirror {
-  margin-right: 5px;
-}
-/* line 95, ../sass/_ide.scss */
-section.ide #console {
-  font-family: monospace;
+/* line 72, ../sass/login.sass */
+.auth-form-wrap input[type="submit"] {
+  background: #8ac11b;
   color: #f8f8f2;
+  cursor: pointer;
+}
+/* line 77, ../sass/login.sass */
+.auth-form-wrap input[type="submit"]:active {
+  background: #6a9415;
 }
 
-/* line 8, ../sass/main.sass */
-.layout.dropdown.credits {
-  top: 0px;
-}
-/* line 10, ../sass/main.sass */
-.layout.dropdown.left-nav-bar-wrap, .layout.dropdown.page-wrap {
-  top: 100px;
-}
-
-/* line 13, ../sass/main.sass */
-html {
-  overflow: hidden;
+/* line 81, ../sass/login.sass */
+.title-sequence {
+  position: relative;
+  top: 15%;
 }
